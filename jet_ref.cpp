@@ -5,7 +5,7 @@
 #include "ap_fixed.h"
 #include "src/JET.h"
 
-void met_ref(float in_pt[NJET], float in_phi[NJET], float& out_pt, float& out_phi){
+void jet_ref(float in_pt[NJET], float in_phi[NJET], float& out_pt, float& out_phi){
     if(DEBUG) std::cout << " REF Begin" << std::endl;
     double met_x=0.;
     double met_y=0.;

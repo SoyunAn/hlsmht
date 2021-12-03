@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../jet_ref.cpp in debug mode
+   Compiling ../../../../jet_test.cpp in debug mode
+   Compiling ../../../../src/JET.cpp in debug mode
+   Generating csim.exe
+obj/jet_test.o: In function `alg_test()':
+/home/syan/work/hlsmht/proj0/solution1/csim/build/../../../../jet_test.cpp:70: undefined reference to `jet_hw(ap_uint<16>*, ap_int<11>*, ap_uint<32>&, ap_int<11>&)'
+collect2: error: ld returned 1 exit status
+make: *** [csim.exe] 오류 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

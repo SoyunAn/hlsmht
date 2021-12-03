@@ -9,17 +9,17 @@
 #include "hls_math.h"
 #include "hls_stream.h"
 
+#define NTEST 100
 #define NJET 10
-#define NTEST 1
-#define NPART 1
+#define NPART 10
 #define FLOATPI 3.141593
 
-#define PT_SIZE 85
+#define PT_SIZE 16
 #define PT2_SIZE 2*PT_SIZE
 #define PT_DEC_BITS 2
 
-#define PHI_SIZE 2.15
-#define ETA_SIZE -0.44
+#define PHI_SIZE 10
+#define ETA_SIZE 12
 
 #define DEBUG 0
 
@@ -154,7 +154,7 @@ void init_inv_table(pt_T table_out[INV_TAB_SIZE]) {
 // Get arctan of a number in (0,1), represented as integers 0 to 2^(pt_size)=1024
 // for a 1-1 mapping, we can get away with an eighth of the bits used for full phi
 template<class glbphi_T>
-void init_atan_table(phi_T table_out[ATAN_TAB_SIZE]) {
+void init_atan_table(glbphi_T table_out[ATAN_TAB_SIZE]) {
     // multiply result by 1=2^(PT-SIZE) 
     table_out[0]=int(0);
     for (int i = 1; i < ATAN_TAB_SIZE; i++) {
@@ -164,7 +164,7 @@ void init_atan_table(phi_T table_out[ATAN_TAB_SIZE]) {
 }
 
 template<class pxy_T, class glbphi_T, class pt_T>
-    void PhiFromXY(pxy_T px, pxy_T py, glbphi_T &phi){
+    void PhiFromXY(pxy_T px, pxy_T py, pt_T pt, glbphi_T &phi){
 
     // Initialize the lookup tables
 #ifdef __HLS_SYN__
@@ -183,33 +183,38 @@ template<class pxy_T, class glbphi_T, class pt_T>
     }
 
     if(px==0 && py==0){ phi = 0; return; }
-
+		int index;
+		index = (((px/hls::sqrt(pt))+1)/2)*ATAN_TAB_SIZE;
+		if(index<0) index = 0;
+		if(index>ATAN_TAB_SIZE-1) index = ATAN_TAB_SIZE-1;
+		phi = atan_table[index];
+		if(py < 0) phi = -phi;
     // get q1 coordinates
-    pt_t x =  px; //px>=0 ? px : -px;
-    pt_t y =  py; //py>=0 ? py : -py;
-    if(px<0) x = -px;
-    if(py<0) y = -py;
-    // transform so a<b
-    pt_t a = x; //x<y ? x : y;
-    pt_t b = y; //x<y ? y : x;
-    if(a>b){ a = y; b = x; }
-
-    pt_t inv_b;
-    if(b>= (1<<(PT_SIZE-DROP_BITS))) inv_b = 1; 
-    // don't bother to store these large numbers in the LUT...
-    // instead approximate their inverses as 1
-    else inv_b = inv_table[b];
-
-    pt_t a_over_b = a * inv_b; // x 2^(PT_SIZE-DROP_BITS)
-    ap_uint<ATAN_SIZE> atan_index = a_over_b >> (PT_SIZE-ATAN_SIZE); // keep only most significant bits
-    phi = atan_table[atan_index];
-
-    // rotate from (0,pi/4) to full quad1
-    if(y>x) phi = (1<<(PHI_SIZE-2)) - phi; //phi = pi/2 - phi
-    // other quadrants
-    if( px < 0 && py > 0 ) phi = (1<<(PHI_SIZE-1)) - phi;    // Q2 phi = pi - phi
-    if( px > 0 && py < 0 ) phi = -phi;                       // Q4 phi = -phi
-    if( px < 0 && py < 0 ) phi = -((1<<(PHI_SIZE-1)) - phi); // Q3 composition of both
+//    pt_t x =  px; //px>=0 ? px : -px;
+//    pt_t y =  py; //py>=0 ? py : -py;
+//    if(px<0) x = -px;
+//    if(py<0) y = -py;
+//    // transform so a<b
+//    pt_t a = x; //x<y ? x : y;
+//    pt_t b = y; //x<y ? y : x;
+//    if(a>b){ a = y; b = x; }
+//
+//    pt_t inv_b;
+//    if(b>= (1<<(PT_SIZE-DROP_BITS))) inv_b = 1; 
+//    // don't bother to store these large numbers in the LUT...
+//    // instead approximate their inverses as 1
+//    else inv_b = inv_table[b];
+//
+//    pt_t a_over_b = a * inv_b; // x 2^(PT_SIZE-DROP_BITS)
+//    ap_uint<ATAN_SIZE> atan_index = a_over_b >> (PT_SIZE-ATAN_SIZE); // keep only most significant bits
+//    phi = atan_table[atan_index];
+//
+//    // rotate from (0,pi/4) to full quad1
+//    if(y>x) phi = (1<<(PHI_SIZE-2)) - phi; //phi = pi/2 - phi
+//    // other quadrants
+//    if( px < 0 && py > 0 ) phi = (1<<(PHI_SIZE-1)) - phi;    // Q2 phi = pi - phi
+//    if( px > 0 && py < 0 ) phi = -phi;                       // Q4 phi = -phi
+//    if( px < 0 && py < 0 ) phi = -((1<<(PHI_SIZE-1)) - phi); // Q3 composition of both
 
     return;
 }
