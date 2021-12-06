@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="jet_hw.wdb" id="1">
+         <top_modules>
+            <top_module name="apatb_jet_hw_top" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="group1">
+      <obj_property name="label">Design Top Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group2">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group3">
+            <obj_property name="label">met_phi(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/met_phi_V_ap_vld">
+               <obj_property name="ElementShortName">met_phi_V_ap_vld</obj_property>
+               <obj_property name="ObjectShortName">met_phi_V_ap_vld</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/met_phi_V">
+               <obj_property name="ElementShortName">met_phi_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">met_phi_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group6">
+            <obj_property name="label">met_pt2(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/met_pt2_V_ap_vld">
+               <obj_property name="ElementShortName">met_pt2_V_ap_vld</obj_property>
+               <obj_property name="ObjectShortName">met_pt2_V_ap_vld</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/met_pt2_V">
+               <obj_property name="ElementShortName">met_pt2_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">met_pt2_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group9">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group10">
+            <obj_property name="label">jet_phi(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_9_V">
+               <obj_property name="ElementShortName">jet_phi_9_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_9_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_8_V">
+               <obj_property name="ElementShortName">jet_phi_8_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_8_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_7_V">
+               <obj_property name="ElementShortName">jet_phi_7_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_7_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_6_V">
+               <obj_property name="ElementShortName">jet_phi_6_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_6_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_5_V">
+               <obj_property name="ElementShortName">jet_phi_5_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_5_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_4_V">
+               <obj_property name="ElementShortName">jet_phi_4_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_4_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_3_V">
+               <obj_property name="ElementShortName">jet_phi_3_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_3_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_2_V">
+               <obj_property name="ElementShortName">jet_phi_2_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_2_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_1_V">
+               <obj_property name="ElementShortName">jet_phi_1_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_1_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_phi_0_V">
+               <obj_property name="ElementShortName">jet_phi_0_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_0_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group21">
+            <obj_property name="label">jet_pt(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_9_V">
+               <obj_property name="ElementShortName">jet_pt_9_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_9_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_8_V">
+               <obj_property name="ElementShortName">jet_pt_8_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_8_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_7_V">
+               <obj_property name="ElementShortName">jet_pt_7_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_7_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_6_V">
+               <obj_property name="ElementShortName">jet_pt_6_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_6_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_5_V">
+               <obj_property name="ElementShortName">jet_pt_5_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_5_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_4_V">
+               <obj_property name="ElementShortName">jet_pt_4_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_4_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_3_V">
+               <obj_property name="ElementShortName">jet_pt_3_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_3_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_2_V">
+               <obj_property name="ElementShortName">jet_pt_2_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_2_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_1_V">
+               <obj_property name="ElementShortName">jet_pt_1_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_1_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/jet_pt_0_V">
+               <obj_property name="ElementShortName">jet_pt_0_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_0_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group32">
+         <obj_property name="label">Block-level IO Handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_idle">
+            <obj_property name="ElementShortName">ap_idle</obj_property>
+            <obj_property name="ObjectShortName">ap_idle</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group37">
+         <obj_property name="label">Reset</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_rst">
+            <obj_property name="ElementShortName">ap_rst</obj_property>
+            <obj_property name="ObjectShortName">ap_rst</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group39">
+         <obj_property name="label">Clock</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_jet_hw_top/AESL_inst_jet_hw/ap_clk">
+            <obj_property name="ElementShortName">ap_clk</obj_property>
+            <obj_property name="ObjectShortName">ap_clk</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group41">
+      <obj_property name="label">Test Bench Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group42">
+         <obj_property name="label">Internal Signals</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group43">
+            <obj_property name="label">Simulation Status</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/AUTOTB_TRANSACTION_NUM">
+               <obj_property name="ElementShortName">AUTOTB_TRANSACTION_NUM</obj_property>
+               <obj_property name="ObjectShortName">AUTOTB_TRANSACTION_NUM</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/ready_cnt">
+               <obj_property name="ElementShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/done_cnt">
+               <obj_property name="ElementShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group44">
+            <obj_property name="label">Port Depth</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_0_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_0_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_0_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_1_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_1_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_1_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_2_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_2_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_2_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_3_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_3_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_3_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_4_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_4_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_4_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_5_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_5_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_5_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_6_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_6_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_6_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_7_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_7_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_7_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_8_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_8_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_8_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_pt_9_V">
+               <obj_property name="ElementShortName">LENGTH_jet_pt_9_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_pt_9_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_0_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_0_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_0_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_1_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_1_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_1_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_2_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_2_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_2_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_3_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_3_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_3_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_4_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_4_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_4_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_5_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_5_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_5_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_6_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_6_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_6_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_7_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_7_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_7_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_8_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_8_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_8_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_jet_phi_9_V">
+               <obj_property name="ElementShortName">LENGTH_jet_phi_9_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_jet_phi_9_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_met_pt2_V">
+               <obj_property name="ElementShortName">LENGTH_met_pt2_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_met_pt2_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="other" fp_name="/apatb_jet_hw_top/LENGTH_met_phi_V">
+               <obj_property name="ElementShortName">LENGTH_met_phi_V</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_met_phi_V</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group70">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group71">
+            <obj_property name="label">met_phi(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_jet_hw_top/met_phi_V_ap_vld">
+               <obj_property name="ElementShortName">met_phi_V_ap_vld</obj_property>
+               <obj_property name="ObjectShortName">met_phi_V_ap_vld</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/met_phi_V">
+               <obj_property name="ElementShortName">met_phi_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">met_phi_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group74">
+            <obj_property name="label">met_pt2(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_jet_hw_top/met_pt2_V_ap_vld">
+               <obj_property name="ElementShortName">met_pt2_V_ap_vld</obj_property>
+               <obj_property name="ObjectShortName">met_pt2_V_ap_vld</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/met_pt2_V">
+               <obj_property name="ElementShortName">met_pt2_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">met_pt2_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group77">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group78">
+            <obj_property name="label">jet_phi(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_9_V">
+               <obj_property name="ElementShortName">jet_phi_9_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_9_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_8_V">
+               <obj_property name="ElementShortName">jet_phi_8_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_8_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_7_V">
+               <obj_property name="ElementShortName">jet_phi_7_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_7_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_6_V">
+               <obj_property name="ElementShortName">jet_phi_6_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_6_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_5_V">
+               <obj_property name="ElementShortName">jet_phi_5_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_5_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_4_V">
+               <obj_property name="ElementShortName">jet_phi_4_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_4_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_3_V">
+               <obj_property name="ElementShortName">jet_phi_3_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_3_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_2_V">
+               <obj_property name="ElementShortName">jet_phi_2_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_2_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_1_V">
+               <obj_property name="ElementShortName">jet_phi_1_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_1_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_phi_0_V">
+               <obj_property name="ElementShortName">jet_phi_0_V[10:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_phi_0_V[10:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group89">
+            <obj_property name="label">jet_pt(wire)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_9_V">
+               <obj_property name="ElementShortName">jet_pt_9_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_9_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_8_V">
+               <obj_property name="ElementShortName">jet_pt_8_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_8_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_7_V">
+               <obj_property name="ElementShortName">jet_pt_7_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_7_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_6_V">
+               <obj_property name="ElementShortName">jet_pt_6_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_6_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_5_V">
+               <obj_property name="ElementShortName">jet_pt_5_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_5_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_4_V">
+               <obj_property name="ElementShortName">jet_pt_4_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_4_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_3_V">
+               <obj_property name="ElementShortName">jet_pt_3_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_3_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_2_V">
+               <obj_property name="ElementShortName">jet_pt_2_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_2_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_1_V">
+               <obj_property name="ElementShortName">jet_pt_1_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_1_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_jet_hw_top/jet_pt_0_V">
+               <obj_property name="ElementShortName">jet_pt_0_V[15:0]</obj_property>
+               <obj_property name="ObjectShortName">jet_pt_0_V[15:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

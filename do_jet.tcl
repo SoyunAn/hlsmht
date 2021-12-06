@@ -1,6 +1,6 @@
 # open the project, don't forget to reset
 open_project -reset proj0
-set_top mht_hw
+set_top jet_hw
 add_files src/JET.cpp
 add_files -tb jet_test.cpp 
 add_files -tb jet_ref.cpp

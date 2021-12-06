@@ -62,3 +62,104 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174821 ; free virtual = 200288
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:30) automatically.
+WARNING: [SYNCHK 200-23] /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:29 ; elapsed = 00:01:34 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174817 ; free virtual = 200289
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<33, 33>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:13).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'jet_hw' (src/JET.cpp:15).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<33, 33>' completely with a factor of 17.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<33, 33>' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_COMPONENTS' (src/JET.cpp:27) in function 'jet_hw' completely with a factor of 10.
+INFO: [XFORM 203-101] Partitioning array 'jet_pt.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'jet_phi.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
+INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' into 'jet_hw' (src/JET.cpp:43) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<33, 33>'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:116:31) to (src/JET.h:125:5) in function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:72:31) to (src/JET.h:83:5) in function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174803 ; free virtual = 200290
+WARNING: [XFORM 203-631] Renaming function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjY' (src/JET.h:116:5)
+WARNING: [XFORM 203-631] Renaming function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjX' (src/JET.h:72:5)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174799 ; free virtual = 200290
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'jet_hw' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<33, 33>' to 'sqrt_fixed_33_33_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjX'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 95.53 seconds; current allocated memory: 618.103 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.268 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjY'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.363 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 618.492 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_33_33_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<33, 33>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 618.970 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 619.760 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 39.
+INFO: [SCHED 204-11]

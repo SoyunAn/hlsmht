@@ -12,9 +12,9 @@
 
 // pt, phi are integers
 //void met_hw(pt_t data_pt[NPART], phi_t data_phi[NPART], pt2_t& res_pt2, phi_t& res_phi){
-void jet_hw(pt_t jet_pt[NJET], glbphi_t jet_phi[NJET], pt2_t& met_pt2, phi_t& met_phi){
-    #pragma HLS ARRAY_PARTITION variable=data_pt complete
-    #pragma HLS ARRAY_PARTITION variable=data_phi complete
+void jet_hw(pt_t jet_pt[NJET], glbphi_t jet_phi[NJET], pt2_t& met_pt2, glbphi_t& met_phi){
+    #pragma HLS ARRAY_PARTITION variable=jet_pt complete
+    #pragma HLS ARRAY_PARTITION variable=jet_phi complete
     #pragma HLS pipeline ii=6
     
     if(DEBUG) std::cout << "  HW Begin" << std::endl;

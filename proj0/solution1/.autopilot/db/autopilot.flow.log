@@ -1,7 +1,7 @@
-INFO-FLOW: Workspace /home/syan/work/hlsmht/proj0/solution1 opened at Fri Dec 03 15:26:31 KST 2021
+INFO-FLOW: Workspace /home/syan/work/hlsmht/proj0/solution1 opened at Sun Dec 05 18:56:59 KST 2021
 Execute     set_part xcvu9p-flga2104-2l-e 
 Execute       ap_part_info -name xcvu9p-flga2104-2l-e -data single -quiet 
-Command       ap_part_info done; 0.86 sec.
+Command       ap_part_info done; 0.85 sec.
 Execute       ap_part_info -name xcvu9p-flga2104-2l-e -data info 
 Execute       add_library xilinx/virtexuplus/virtexuplus:xcvu9p:-flga2104:-2L-e 
 Execute         get_default_platform 
@@ -73,7 +73,7 @@ Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/tec
 INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
 Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
 Execute       get_default_platform 
-Command     set_part done; 1.03 sec.
+Command     set_part done; 1.02 sec.
 Execute     create_clock -period 4.16667 -name default 
 Execute       config_clock -quiet -name default -period 4.167 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
@@ -87,8 +87,798 @@ Execute       is_xip /home/syan/work/hlsmht/jet_test.cpp
 Execute       is_encrypted /home/syan/work/hlsmht/src/JET.cpp 
 Execute       is_xip /home/syan/work/hlsmht/src/JET.cpp 
 Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
-ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+Execute       source run_sim.tcl 
+Command       ap_source done; 0.21 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-Command     csim_design done; error code: 2; 19.85 sec.
-Command   ap_source done; error code: 1; 20.92 sec.
-Execute   cleanup_all 
+Command     csim_design done; 20.03 sec.
+Execute     csynth_design 
+Execute       get_config_compile -dump_cfg 
+Execute       get_config_compile -effort 
+Execute       get_config_compile -enable_clang39 
+Execute       get_config_compile -g 
+Execute       get_config_compile -ng 
+Execute       get_config_compile -opt_fp 
+Execute       get_config_compile -skip_cdt 
+Execute       get_config_compile -skip_syncheck 
+Execute       get_config_compile -skip_transform 
+Execute       get_config_compile -keep_printf 
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute         get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute         get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute         is_m_axi_addr64 
+INFO-FLOW: Handling src/JET.cpp as C++
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+Execute         is_encrypted src/JET.cpp 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute         clang  -fno-limit-debug-info -gcc-toolchain "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "src/JET.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot" -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp" 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E src/JET.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp
+Command         clang done; 1.38 sec.
+Execute         tidy_31 xilinx-xfmat-array-geometry /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.78 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute         clang -syntaxcheck -src /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot" -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  "/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp"  -o "/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/useless.bc
+Command         clang done; 3.97 sec.
+INFO-FLOW: Done: GCC PP time: 10.1 seconds per iteration
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute         list_core -type functional_unit 
+Execute         tidy_31 xilinx-systemc-detector /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp std=gnu++98 -directive=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.3 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute         tidy_31 xilinx-directive2pragma /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp std=gnu++98 -directive=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 4.27 sec.
+Execute         get_config_dataflow -strict_mode 
+Execute         ap_eval exec -ignorestderr /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/xilinx-dataflow-lawyer.JET.pp.0.cpp.diag.yml /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/xilinx-dataflow-lawyer.JET.pp.0.cpp.out.log 2> /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/xilinx-dataflow-lawyer.JET.pp.0.cpp.err.log 
+Command         ap_eval done; 3.55 sec.
+Execute         tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp std=gnu++98 
+Execute           ap_eval exec -ignorestderr /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/tidy-3.1.JET.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/tidy-3.1.JET.pp.0.cpp.out.log 2> /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/tidy-3.1.JET.pp.0.cpp.err.log 
+Command           ap_eval done; 7.96 sec.
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute           ap_eval exec -ignorestderr /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/xilinx-legacy-rewriter.JET.pp.0.cpp.out.log 2> /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/xilinx-legacy-rewriter.JET.pp.0.cpp.err.log 
+Command           ap_eval done; 3.72 sec.
+Command         tidy_31 done; 12.16 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 20 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute         tidy_31 xilinx-ssdm-intrinsics-arguments /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command         tidy_31 done; 6.36 sec.
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: Processing labels
+Execute         clang -src /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot" -I "/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o "/home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.bc" 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot -I /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.bc
+Command         clang done; 4.13 sec.
+INFO-FLOW: Linking Debug ...
+Execute         llvm-ld /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/JET.g.bc -hls-opt -except-internalize jet_hw -L/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/lib -lhlsm -lhlsmc++ -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g 
+Command         llvm-ld done; 2.37 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
+Execute         get_config_sdx -target 
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute           transform -promote-dbg-pointer /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.pp.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.pp.0.bc -f 
+Command           transform done; 0.6 sec.
+Execute           llvm-ld /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/lib -lfloatconversion -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.0 
+Command           llvm-ld done; 2.71 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top jet_hw -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.0.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command           transform done; 20.48 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174821 ; free virtual = 200288
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.1.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:30) automatically.
+Command           transform done; 0.64 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command           transform done; 0.26 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:29 ; elapsed = 00:01:34 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174817 ; free virtual = 200289
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.g.1.bc to /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /home/syan/work/hlsmht/proj0/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.1.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<33, 33>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:13).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'jet_hw' (src/JET.cpp:15).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<33, 33>' completely with a factor of 17.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<33, 33>' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_COMPONENTS' (src/JET.cpp:27) in function 'jet_hw' completely with a factor of 10.
+INFO: [XFORM 203-101] Partitioning array 'jet_pt.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'jet_phi.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
+INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' into 'jet_hw' (src/JET.cpp:43) automatically.
+Command           transform done; 0.82 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<33, 33>'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:116:31) to (src/JET.h:125:5) in function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:72:31) to (src/JET.h:83:5) in function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+Command           transform done; 0.37 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174803 ; free virtual = 200290
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.2.bc -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjY' (src/JET.h:116:5)
+WARNING: [XFORM 203-631] Renaming function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjX' (src/JET.h:72:5)
+Command           transform done; 0.53 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174799 ; free virtual = 200290
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 26.46 sec.
+Command       elaborate done; 74.1 sec.
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'jet_hw' ...
+Execute         ap_set_top_model jet_hw 
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<33, 33>' to 'sqrt_fixed_33_33_s'.
+Execute         get_model_list jet_hw -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model jet_hw 
+Execute         preproc_iomode -model sqrt_fixed<33, 33> 
+Execute         preproc_iomode -model ProjY 
+Execute         preproc_iomode -model ProjX 
+Execute         get_model_list jet_hw -filter all-wo-channel 
+INFO-FLOW: Model list for configure: ProjX ProjY {sqrt_fixed<33, 33>} jet_hw
+INFO-FLOW: Configuring Module : ProjX ...
+Execute         set_default_model ProjX 
+Execute         apply_spec_resource_limit ProjX 
+INFO-FLOW: Configuring Module : ProjY ...
+Execute         set_default_model ProjY 
+Execute         apply_spec_resource_limit ProjY 
+INFO-FLOW: Configuring Module : sqrt_fixed<33, 33> ...
+Execute         set_default_model sqrt_fixed<33, 33> 
+Execute         apply_spec_resource_limit sqrt_fixed<33, 33> 
+INFO-FLOW: Configuring Module : jet_hw ...
+Execute         set_default_model jet_hw 
+Execute         apply_spec_resource_limit jet_hw 
+INFO-FLOW: Model list for preprocess: ProjX ProjY {sqrt_fixed<33, 33>} jet_hw
+INFO-FLOW: Preprocessing Module: ProjX ...
+Execute         set_default_model ProjX 
+Execute         cdfg_preprocess -model ProjX 
+Execute         rtl_gen_preprocess ProjX 
+INFO-FLOW: Preprocessing Module: ProjY ...
+Execute         set_default_model ProjY 
+Execute         cdfg_preprocess -model ProjY 
+Execute         rtl_gen_preprocess ProjY 
+INFO-FLOW: Preprocessing Module: sqrt_fixed<33, 33> ...
+Execute         set_default_model sqrt_fixed<33, 33> 
+Execute         cdfg_preprocess -model sqrt_fixed<33, 33> 
+Execute         rtl_gen_preprocess sqrt_fixed<33, 33> 
+INFO-FLOW: Preprocessing Module: jet_hw ...
+Execute         set_default_model jet_hw 
+Execute         cdfg_preprocess -model jet_hw 
+Execute         rtl_gen_preprocess jet_hw 
+INFO-FLOW: Model list for synthesis: ProjX ProjY {sqrt_fixed<33, 33>} jet_hw
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model ProjX 
+Execute         schedule -model ProjX 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjX'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 95.53 seconds; current allocated memory: 618.103 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.verbose.sched.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.sched.adb -f 
+INFO-FLOW: Finish scheduling ProjX.
+Execute         set_default_model ProjX 
+Execute         bind -model ProjX 
+BIND OPTION: model=ProjX
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.268 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.verbose.bind.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.bind.adb -f 
+INFO-FLOW: Finish binding ProjX.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model ProjY 
+Execute         schedule -model ProjY 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjY'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.363 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.verbose.sched.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.sched.adb -f 
+INFO-FLOW: Finish scheduling ProjY.
+Execute         set_default_model ProjY 
+Execute         bind -model ProjY 
+BIND OPTION: model=ProjY
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 618.492 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.verbose.bind.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.bind.adb -f 
+INFO-FLOW: Finish binding ProjY.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_33_33_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model sqrt_fixed<33, 33> 
+Execute         schedule -model sqrt_fixed<33, 33> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<33, 33>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 618.970 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.verbose.sched.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.sched.adb -f 
+INFO-FLOW: Finish scheduling sqrt_fixed<33, 33>.
+Execute         set_default_model sqrt_fixed<33, 33> 
+Execute         bind -model sqrt_fixed<33, 33> 
+BIND OPTION: model=sqrt_fixed<33, 33>
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 619.760 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.verbose.bind.rpt 
+Command         syn_report done; 0.12 sec.
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.bind.adb -f 
+INFO-FLOW: Finish binding sqrt_fixed<33, 33>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model jet_hw 
+Execute         schedule -model jet_hw 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 39.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 620.257 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.verbose.sched.rpt 
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.sched.adb -f 
+INFO-FLOW: Finish scheduling jet_hw.
+Execute         set_default_model jet_hw 
+Execute         bind -model jet_hw 
+BIND OPTION: model=jet_hw
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 620.926 MB.
+Execute         syn_report -verbosereport -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.verbose.bind.rpt 
+Command         syn_report done; 0.23 sec.
+Execute         db_write -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.bind.adb -f 
+INFO-FLOW: Finish binding jet_hw.
+Execute         get_model_list jet_hw -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess ProjX 
+Execute         rtl_gen_preprocess ProjY 
+Execute         rtl_gen_preprocess sqrt_fixed<33, 33> 
+Execute         rtl_gen_preprocess jet_hw 
+INFO-FLOW: Model list for RTL generation: ProjX ProjY {sqrt_fixed<33, 33>} jet_hw
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model ProjX -vendor xilinx -mg_file /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjX'.
+INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 621.478 MB.
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         gen_rtl ProjX -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/syan/work/hlsmht/proj0/solution1/syn/systemc/ProjX -synmodules ProjX ProjY {sqrt_fixed<33, 33>} jet_hw 
+Execute         gen_rtl ProjX -style xilinx -f -lang vhdl -o /home/syan/work/hlsmht/proj0/solution1/syn/vhdl/ProjX 
+Execute         gen_rtl ProjX -style xilinx -f -lang vlog -o /home/syan/work/hlsmht/proj0/solution1/syn/verilog/ProjX 
+Execute         syn_report -csynth -model ProjX -o /home/syan/work/hlsmht/proj0/solution1/syn/report/ProjX_csynth.rpt 
+Execute         syn_report -rtlxml -model ProjX -o /home/syan/work/hlsmht/proj0/solution1/syn/report/ProjX_csynth.xml 
+Execute         syn_report -verbosereport -model ProjX -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.verbose.rpt 
+Execute         db_write -model ProjX -f -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.adb 
+Execute         gen_tb_info ProjX -p /home/syan/work/hlsmht/proj0/solution1/.autopilot/db -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model ProjY -vendor xilinx -mg_file /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjY'.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 622.352 MB.
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         gen_rtl ProjY -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/syan/work/hlsmht/proj0/solution1/syn/systemc/ProjY -synmodules ProjX ProjY {sqrt_fixed<33, 33>} jet_hw 
+Execute         gen_rtl ProjY -style xilinx -f -lang vhdl -o /home/syan/work/hlsmht/proj0/solution1/syn/vhdl/ProjY 
+Execute         gen_rtl ProjY -style xilinx -f -lang vlog -o /home/syan/work/hlsmht/proj0/solution1/syn/verilog/ProjY 
+Execute         syn_report -csynth -model ProjY -o /home/syan/work/hlsmht/proj0/solution1/syn/report/ProjY_csynth.rpt 
+Execute         syn_report -rtlxml -model ProjY -o /home/syan/work/hlsmht/proj0/solution1/syn/report/ProjY_csynth.xml 
+Execute         syn_report -verbosereport -model ProjY -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.verbose.rpt 
+Execute         db_write -model ProjY -f -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.adb 
+Execute         gen_tb_info ProjY -p /home/syan/work/hlsmht/proj0/solution1/.autopilot/db -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_33_33_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model sqrt_fixed<33, 33> -vendor xilinx -mg_file /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_33_33_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 624.092 MB.
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         gen_rtl sqrt_fixed<33, 33> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/syan/work/hlsmht/proj0/solution1/syn/systemc/sqrt_fixed_33_33_s -synmodules ProjX ProjY {sqrt_fixed<33, 33>} jet_hw 
+Execute         gen_rtl sqrt_fixed<33, 33> -style xilinx -f -lang vhdl -o /home/syan/work/hlsmht/proj0/solution1/syn/vhdl/sqrt_fixed_33_33_s 
+Execute         gen_rtl sqrt_fixed<33, 33> -style xilinx -f -lang vlog -o /home/syan/work/hlsmht/proj0/solution1/syn/verilog/sqrt_fixed_33_33_s 
+Execute         syn_report -csynth -model sqrt_fixed<33, 33> -o /home/syan/work/hlsmht/proj0/solution1/syn/report/sqrt_fixed_33_33_s_csynth.rpt 
+Execute         syn_report -rtlxml -model sqrt_fixed<33, 33> -o /home/syan/work/hlsmht/proj0/solution1/syn/report/sqrt_fixed_33_33_s_csynth.xml 
+Execute         syn_report -verbosereport -model sqrt_fixed<33, 33> -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.verbose.rpt 
+Command         syn_report done; 0.14 sec.
+Execute         db_write -model sqrt_fixed<33, 33> -f -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.adb 
+Execute         gen_tb_info sqrt_fixed<33, 33> -p /home/syan/work/hlsmht/proj0/solution1/.autopilot/db -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         get_config_rtl -module_prefix 
+Execute         get_config_rtl -module_auto_prefix 
+Execute         create_rtl_model jet_hw -vendor xilinx -mg_file /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_2_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_3_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_4_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_5_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_6_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_7_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_8_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_9_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_2_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_3_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_4_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_5_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_6_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_7_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_8_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_phi_9_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/met_pt2_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/met_phi_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'jet_hw' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mac_muladd_17s_17s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_17s_17s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_udiv_17s_17ns_17_21_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'jet_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 627.942 MB.
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         gen_rtl jet_hw -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/syan/work/hlsmht/proj0/solution1/syn/systemc/jet_hw -synmodules ProjX ProjY {sqrt_fixed<33, 33>} jet_hw 
+Execute         gen_rtl jet_hw -istop -style xilinx -f -lang vhdl -o /home/syan/work/hlsmht/proj0/solution1/syn/vhdl/jet_hw 
+Execute         gen_rtl jet_hw -istop -style xilinx -f -lang vlog -o /home/syan/work/hlsmht/proj0/solution1/syn/verilog/jet_hw 
+Execute         syn_report -csynth -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/syn/report/jet_hw_csynth.rpt 
+Execute         syn_report -rtlxml -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/syn/report/jet_hw_csynth.xml 
+Execute         syn_report -verbosereport -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.verbose.rpt 
+Command         syn_report done; 0.25 sec.
+Execute         db_write -model jet_hw -f -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.adb 
+Execute         gen_tb_info jet_hw -p /home/syan/work/hlsmht/proj0/solution1/.autopilot/db -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw 
+Execute         export_constraint_db -f -tool general -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.constraint.tcl 
+Execute         syn_report -designview -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.design.xml 
+Command         syn_report done; 0.14 sec.
+Execute         get_config_rtl -disable_wave_debug 
+Execute         syn_report -wcfg -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model jet_hw -o /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.protoinst 
+Execute         get_config_debug -directory 
+Execute         sc_get_clocks jet_hw 
+Execute         get_config_export -vivado_clock 
+Execute         sc_get_portdomain jet_hw 
+INFO-FLOW: Model list for RTL component generation: ProjX ProjY {sqrt_fixed<33, 33>} jet_hw
+INFO-FLOW: Handling components in module [ProjX] ... 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+INFO-FLOW: Found component jet_hw_mul_mul_16ns_16ns_32_1_1.
+INFO-FLOW: Append model jet_hw_mul_mul_16ns_16ns_32_1_1
+INFO-FLOW: Found component ProjX_cos_table1.
+INFO-FLOW: Append model ProjX_cos_table1
+INFO-FLOW: Handling components in module [ProjY] ... 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+INFO-FLOW: Found component ProjY_sin_table2.
+INFO-FLOW: Append model ProjY_sin_table2
+INFO-FLOW: Handling components in module [sqrt_fixed_33_33_s] ... 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+INFO-FLOW: Handling components in module [jet_hw] ... 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+INFO-FLOW: Found component jet_hw_udiv_17s_17ns_17_21_1.
+INFO-FLOW: Append model jet_hw_udiv_17s_17ns_17_21_1
+INFO-FLOW: Found component jet_hw_mul_mul_17s_17s_32_1_1.
+INFO-FLOW: Append model jet_hw_mul_mul_17s_17s_32_1_1
+INFO-FLOW: Found component jet_hw_mac_muladd_17s_17s_32s_32_1_1.
+INFO-FLOW: Append model jet_hw_mac_muladd_17s_17s_32s_32_1_1
+INFO-FLOW: Found component jet_hw_atan_table4.
+INFO-FLOW: Append model jet_hw_atan_table4
+INFO-FLOW: Append model ProjX
+INFO-FLOW: Append model ProjY
+INFO-FLOW: Append model sqrt_fixed_33_33_s
+INFO-FLOW: Append model jet_hw
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: jet_hw_mul_mul_16ns_16ns_32_1_1 ProjX_cos_table1 ProjY_sin_table2 jet_hw_udiv_17s_17ns_17_21_1 jet_hw_mul_mul_17s_17s_32_1_1 jet_hw_mac_muladd_17s_17s_32s_32_1_1 jet_hw_atan_table4 ProjX ProjY sqrt_fixed_33_33_s jet_hw
+INFO-FLOW: To file: write model jet_hw_mul_mul_16ns_16ns_32_1_1
+INFO-FLOW: To file: write model ProjX_cos_table1
+INFO-FLOW: To file: write model ProjY_sin_table2
+INFO-FLOW: To file: write model jet_hw_udiv_17s_17ns_17_21_1
+INFO-FLOW: To file: write model jet_hw_mul_mul_17s_17s_32_1_1
+INFO-FLOW: To file: write model jet_hw_mac_muladd_17s_17s_32s_32_1_1
+INFO-FLOW: To file: write model jet_hw_atan_table4
+INFO-FLOW: To file: write model ProjX
+INFO-FLOW: To file: write model ProjY
+INFO-FLOW: To file: write model sqrt_fixed_33_33_s
+INFO-FLOW: To file: write model jet_hw
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/syan/work/hlsmht/proj0/solution1
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/common.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=4.167 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'ProjX_cos_table1_rom' using auto ROMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'ProjY_sin_table2_rom' using auto ROMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'jet_hw_udiv_17s_17ns_17_21_1_div'
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'jet_hw_atan_table4_rom' using distributed ROMs.
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/syan/work/hlsmht/proj0/solution1
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/common.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/interface.gen 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=jet_hw xml_exists=0
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute           ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.compgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.constraint.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=46
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=22
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=11 #gSsdmPorts=46
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_export -xo 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_sdx -target 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.compgen.dataonly.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.constraint.tcl 
+Execute         sc_get_clocks jet_hw 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute         ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute         get_config_debug -directory 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjX.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/ProjY.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/sqrt_fixed_33_33_s.tbgen.tcl 
+Execute         source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute         get_config_sdx -target 
+Execute         get_config_sdx -profile 
+Execute         get_config_rtl -kernel_profile 
+Execute         get_config_rtl -stall_sig_gen 
+Execute         get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:33 ; elapsed = 00:01:39 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174786 ; free virtual = 200289
+INFO: [VHDL 208-304] Generating VHDL RTL for jet_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for jet_hw.
+Command       autosyn done; 3.13 sec.
+Command     csynth_design done; 77.23 sec.
+Execute     cosim_design -trace_level all -rtl vhdl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/common.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op.gen 
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Execute       source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+Execute         source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data names -quiet 
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info -quiet 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       is_encrypted /home/syan/work/hlsmht/jet_ref.cpp 
+Execute       is_encrypted /home/syan/work/hlsmht/jet_test.cpp 
+Execute       is_encrypted /home/syan/work/hlsmht/src/JET.cpp 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: TB processing: /home/syan/work/hlsmht/jet_ref.cpp /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_ref.cpp_pre.cpp
+Execute       tidy_31 xilinx-tb-xfmat /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_ref.cpp_pre.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_ref.cpp_pre.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.49 sec.
+Execute       tidy_31 xilinx-tb31-process /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_ref.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_ref.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.37 sec.
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: TB processing: /home/syan/work/hlsmht/jet_test.cpp /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_test.cpp_pre.cpp
+Execute       tidy_31 xilinx-tb-xfmat /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_test.cpp_pre.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_test.cpp_pre.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.68 sec.
+Execute       tidy_31 xilinx-tb31-process /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_test.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/jet_test.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 8.27 sec.
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO-FLOW: TB processing: /home/syan/work/hlsmht/src/JET.cpp /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/JET.cpp_pre.cpp
+Execute       tidy_31 xilinx-tb-xfmat /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/JET.cpp_pre.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb-xfmat -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/JET.cpp_pre.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.78 sec.
+Execute       tidy_31 xilinx-tb31-process /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/JET.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-tb31-process -quiet -fix-errors /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/JET.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.76 sec.
+Execute       source /home/syan/work/hlsmht/proj0/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.rtl_wrap.cfg.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+Execute       source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+Command       ap_source done; 0.38 sec.
+INFO: [COSIM 212-333] Generating C post check test bench ...
+Execute       ap_part_info -name xcvu9p-flga2104-2L-e -data info 
+INFO: [COSIM 212-12] Generating RTL test bench ...
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source ../tv/cdatafile/ref.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+Execute       source /home/syan/work/hlsmht/proj0/solution1/.autopilot/db/jet_hw.tbgen.tcl 
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+Execute       source .run_sim.tcl 
+Execute         source check_sim.tcl 
+Execute         source .sim.status.tcl 
+INFO: [COSIM 212-322] Starting VHDL simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+Command       ap_source done; 18.95 sec.
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+Command     cosim_design done; 81.4 sec.
+Execute     cleanup_all 

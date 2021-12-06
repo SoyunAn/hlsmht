@@ -15,5 +15,15 @@
     <clockList>
         <clock name="default" period="4.16667" default="false"/>
     </clockList>
+    <config>
+        <schedule model="jet_hw"/>
+    </config>
+    <Simulation argv="">
+        <SimFlow name="cosim" setup="false" dumpTrace="all" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" reduce_diskspace="false" toolName="auto">
+            <Rtl name="systemc" active="false"/>
+            <Rtl name="verilog" active="false"/>
+            <Rtl name="vhdl" active="true"/>
+        </SimFlow>
+    </Simulation>
 </AutoPilot:solution>
 
