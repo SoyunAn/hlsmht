@@ -134,7 +134,7 @@ template<class pt_T, class glbphi_T,class pxy_T>
 //   Currently we mitigate, by simply not storing inverses of large numbers, 
 //   but there may be a better way to do this (TODO - study this!)
 //
-#define DROP_BITS 2
+#define DROP_BITS 4
 #define INV_TAB_SIZE (1<<(PT_SIZE-DROP_BITS))
 // return the inverse of a 'pt_size' bits (1024) number
 template<class pt_T>
@@ -163,6 +163,27 @@ void init_atan_table(glbphi_T table_out[ATAN_TAB_SIZE]) {
     return;
 }
 
+#define ACOS_SIZE PHI_SIZE-2
+#define ACOS_TAB_SIZE (1<<ACOS_SIZE)
+
+template<class glbphi_T>
+void init_acos_table(glbphi_T table_out[ACOS_TAB_SIZE]){
+	/* int INDEX = 0;  */
+        /* for(int i = ACOS_TAB_SIZE-1; i > -1; i--){  */
+        /*     table_out[INDEX] = acos(2*((ACOS_TAB_SIZE-1)-i)/float(ACOS_TAB_SIZE)-1); */
+        /*     INDEX++; */
+        /* } */
+    if(DEBUG) std::cout << "...initializing acos table... \n";
+    for(int i = 0; i<ACOS_TAB_SIZE; i++){
+        table_out[i] = (1<<(PHI_SIZE-2)) * acos(i/float(ACOS_TAB_SIZE-1)) / (FLOATPI/2); // maps [0, 1023] to [acos(0), acos(1023/1023)] *** 3.1415/2
+        if(0) std::cout << "  " << i << " -> " << table_out[i] << std::endl;
+    }
+    return;
+}
+
+
+
+
 template<class pxy_T, class glbphi_T, class pt_T>
     void PhiFromXY(pxy_T px, pxy_T py, pt_T pt, glbphi_T &phi){
 
@@ -188,7 +209,9 @@ template<class pxy_T, class glbphi_T, class pt_T>
 		if(index<0) index = 0;
 		if(index>ATAN_TAB_SIZE-1) index = ATAN_TAB_SIZE-1;
 		phi = atan_table[index];
+		if(px < 0) phi = (1<<(PHI_SIZE-1)) - phi; // 2pi = 2^PHI_SIZE, so pi = 1<<(PHI_SIZE-1)
 		if(py < 0) phi = -phi;
+		
     // get q1 coordinates
 //    pt_t x =  px; //px>=0 ? px : -px;
 //    pt_t y =  py; //py>=0 ? py : -py;
