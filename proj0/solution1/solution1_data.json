@@ -57,7 +57,7 @@
     "ClockPeriod": "4.167",
     "IsCombLogic": "0",
     "II": "6",
-    "Latency": "38",
+    "Latency": "13",
     "Uncertainty": "0.520875"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.167 [get_ports ap_clk]"]},
@@ -76,31 +76,32 @@
     "CSource": ["..\/..\/src\/JET.cpp"],
     "Vhdl": [
       "impl\/vhdl\/jet_hw_atan_table4.vhd",
+      "impl\/vhdl\/jet_hw_inv_table3.vhd",
       "impl\/vhdl\/jet_hw_mac_muladd_17s_17s_32s_32_1_1.vhd",
       "impl\/vhdl\/jet_hw_mul_mul_16ns_16ns_32_1_1.vhd",
+      "impl\/vhdl\/jet_hw_mul_mul_16s_16s_16_1_1.vhd",
       "impl\/vhdl\/jet_hw_mul_mul_17s_17s_32_1_1.vhd",
-      "impl\/vhdl\/jet_hw_udiv_17s_17ns_17_21_1.vhd",
       "impl\/vhdl\/ProjX.vhd",
       "impl\/vhdl\/ProjX_cos_table1.vhd",
       "impl\/vhdl\/ProjY.vhd",
       "impl\/vhdl\/ProjY_sin_table2.vhd",
-      "impl\/vhdl\/sqrt_fixed_33_33_s.vhd",
       "impl\/vhdl\/jet_hw.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/jet_hw_atan_table4.v",
       "impl\/verilog\/jet_hw_atan_table4_rom.dat",
+      "impl\/verilog\/jet_hw_inv_table3.v",
+      "impl\/verilog\/jet_hw_inv_table3_rom.dat",
       "impl\/verilog\/jet_hw_mac_muladd_17s_17s_32s_32_1_1.v",
       "impl\/verilog\/jet_hw_mul_mul_16ns_16ns_32_1_1.v",
+      "impl\/verilog\/jet_hw_mul_mul_16s_16s_16_1_1.v",
       "impl\/verilog\/jet_hw_mul_mul_17s_17s_32_1_1.v",
-      "impl\/verilog\/jet_hw_udiv_17s_17ns_17_21_1.v",
       "impl\/verilog\/ProjX.v",
       "impl\/verilog\/ProjX_cos_table1.v",
       "impl\/verilog\/ProjX_cos_table1_rom.dat",
       "impl\/verilog\/ProjY.v",
       "impl\/verilog\/ProjY_sin_table2.v",
       "impl\/verilog\/ProjY_sin_table2_rom.dat",
-      "impl\/verilog\/sqrt_fixed_33_33_s.v",
       "impl\/verilog\/jet_hw.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
@@ -508,24 +509,20 @@
       "ModuleName": "jet_hw",
       "Instances": [
         {
-          "ModuleName": "sqrt_fixed_33_33_s",
-          "InstanceName": "grp_sqrt_fixed_33_33_s_fu_272"
+          "ModuleName": "ProjX",
+          "InstanceName": "grp_ProjX_fu_276"
         },
         {
           "ModuleName": "ProjX",
-          "InstanceName": "grp_ProjX_fu_277"
-        },
-        {
-          "ModuleName": "ProjX",
-          "InstanceName": "grp_ProjX_fu_287"
+          "InstanceName": "grp_ProjX_fu_286"
         },
         {
           "ModuleName": "ProjY",
-          "InstanceName": "grp_ProjY_fu_313"
+          "InstanceName": "grp_ProjY_fu_312"
         },
         {
           "ModuleName": "ProjY",
-          "InstanceName": "grp_ProjY_fu_323"
+          "InstanceName": "grp_ProjY_fu_322"
         }
       ]
     },
@@ -538,13 +535,6 @@
         "isOneStateSeq": "0"
       },
       "ProjY": {
-        "FunctionProtocol": "ap_ctrl_hs",
-        "isTaskLevelControl": "1",
-        "isPipelined": "1",
-        "isCombinational": "0",
-        "isOneStateSeq": "0"
-      },
-      "sqrt_fixed_33_33_s": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
         "isPipelined": "1",
@@ -604,47 +594,25 @@
           "URAM": "0"
         }
       },
-      "sqrt_fixed_33_33_s": {
-        "Latency": {
-          "LatencyBest": "4",
-          "LatencyAvg": "4",
-          "LatencyWorst": "4",
-          "PipelineII": "1",
-          "PipelineDepth": "5",
-          "PipelineType": "function"
-        },
-        "Timing": {
-          "Target": "4.17",
-          "Uncertainty": "0.52",
-          "Estimate": "3.611"
-        },
-        "Area": {
-          "FF": "313",
-          "LUT": "1315",
-          "BRAM_18K": "0",
-          "DSP48E": "0",
-          "URAM": "0"
-        }
-      },
       "jet_hw": {
         "Latency": {
-          "LatencyBest": "38",
-          "LatencyAvg": "38",
-          "LatencyWorst": "38",
+          "LatencyBest": "13",
+          "LatencyAvg": "13",
+          "LatencyWorst": "13",
           "PipelineII": "6",
-          "PipelineDepth": "39",
+          "PipelineDepth": "14",
           "PipelineType": "function"
         },
         "Timing": {
           "Target": "4.17",
           "Uncertainty": "0.52",
-          "Estimate": "3.611"
+          "Estimate": "3.644"
         },
         "Area": {
-          "BRAM_18K": "4",
-          "DSP48E": "6",
-          "FF": "2330",
-          "LUT": "3499",
+          "BRAM_18K": "8",
+          "DSP48E": "7",
+          "FF": "969",
+          "LUT": "1690",
           "URAM": "0"
         }
       }
@@ -660,7 +628,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2021-12-05 18:58:37 KST",
+    "Time": "2022-02-02 16:58:25 KST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

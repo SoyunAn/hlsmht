@@ -13,8 +13,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/
 INFO: [VRFC 10-3107] analyzing entity 'ProjX'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/ProjY.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ProjY'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/sqrt_fixed_33_33_s.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'sqrt_fixed_33_33_s'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_16ns_16ns_32_1_1.vhd" into library xil_defaultlib
@@ -26,16 +24,18 @@ INFO: [VRFC 10-3107] analyzing entity 'ProjX_cos_table1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/ProjY_sin_table2.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ProjY_sin_table2_rom'
 INFO: [VRFC 10-3107] analyzing entity 'ProjY_sin_table2'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_udiv_17s_17ns_17_21_1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1_div_u'
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1_div'
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_17s_17s_32_1_1.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_17s_17s_32_1_1_DSP48_1'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_17s_17s_32_1_1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mac_muladd_17s_17s_32s_32_1_1.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mac_muladd_17s_17s_32s_32_1_1_DSP48_2'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mac_muladd_17s_17s_32s_32_1_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_16s_16s_16_1_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_16s_16s_16_1_1_DSP48_3'
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_16s_16s_16_1_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_inv_table3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_inv_table3_rom'
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_inv_table3'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_atan_table4.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_atan_table4_rom'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_atan_table4'
@@ -52,9 +52,10 @@ Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_textio
 Compiling module work.glbl
+Compiling architecture rtl of entity xil_defaultlib.jet_hw_inv_table3_rom [jet_hw_inv_table3_rom_default]
+Compiling architecture arch of entity xil_defaultlib.jet_hw_inv_table3 [jet_hw_inv_table3_default]
 Compiling architecture rtl of entity xil_defaultlib.jet_hw_atan_table4_rom [jet_hw_atan_table4_rom_default]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_atan_table4 [jet_hw_atan_table4_default]
-Compiling architecture behav of entity xil_defaultlib.sqrt_fixed_33_33_s [sqrt_fixed_33_33_s_default]
 Compiling architecture rtl of entity xil_defaultlib.ProjX_cos_table1_rom [projx_cos_table1_rom_default]
 Compiling architecture arch of entity xil_defaultlib.ProjX_cos_table1 [projx_cos_table1_default]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_16ns_16ns_32_1_1_DSP48_0 [jet_hw_mul_mul_16ns_16ns_32_1_1_...]
@@ -63,13 +64,12 @@ Compiling architecture behav of entity xil_defaultlib.ProjX [projx_default]
 Compiling architecture rtl of entity xil_defaultlib.ProjY_sin_table2_rom [projy_sin_table2_rom_default]
 Compiling architecture arch of entity xil_defaultlib.ProjY_sin_table2 [projy_sin_table2_default]
 Compiling architecture behav of entity xil_defaultlib.ProjY [projy_default]
-Compiling architecture rtl of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1_div_u [\jet_hw_udiv_17s_17ns_17_21_1_di...]
-Compiling architecture rtl of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1_div [\jet_hw_udiv_17s_17ns_17_21_1_di...]
-Compiling architecture arch of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1 [\jet_hw_udiv_17s_17ns_17_21_1(id...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_17s_17s_32_1_1_DSP48_1 [jet_hw_mul_mul_17s_17s_32_1_1_ds...]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_mul_mul_17s_17s_32_1_1 [\jet_hw_mul_mul_17s_17s_32_1_1(i...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mac_muladd_17s_17s_32s_32_1_1_DSP48_2 [jet_hw_mac_muladd_17s_17s_32s_32...]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_mac_muladd_17s_17s_32s_32_1_1 [\jet_hw_mac_muladd_17s_17s_32s_3...]
+Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_16s_16s_16_1_1_DSP48_3 [jet_hw_mul_mul_16s_16s_16_1_1_ds...]
+Compiling architecture arch of entity xil_defaultlib.jet_hw_mul_mul_16s_16s_16_1_1 [\jet_hw_mul_mul_16s_16s_16_1_1(i...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw [jet_hw_default]
 Compiling architecture behav of entity xil_defaultlib.apatb_jet_hw_top
 Built simulation snapshot jet_hw
@@ -80,8 +80,8 @@ Built simulation snapshot jet_hw
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Dec  5 18:59:47 2021. For additional details about this file, please refer to the WebTalk help file at /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun Dec  5 18:59:47 2021...
+INFO: [Common 17-186] '/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Feb  2 16:59:19 2022. For additional details about this file, please refer to the WebTalk help file at /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Feb  2 16:59:19 2022...
 
 ****** xsim v2019.1 (64-bit)
   **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
@@ -197,9 +197,9 @@ WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of o
 ## save_wave_config jet_hw.wcfg
 ## run all
 Note: simulation done!
-Time: 2764320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
+Time: 2660320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
 Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
-Time: 2764320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
-$finish called at time : 2764320 ps
+Time: 2660320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
+$finish called at time : 2660320 ps
 ## quit
-INFO: [Common 17-206] Exiting xsim at Sun Dec  5 18:59:58 2021...
+INFO: [Common 17-206] Exiting xsim at Wed Feb  2 16:59:29 2022...

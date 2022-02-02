@@ -55,15 +55,15 @@ reg    sin_table2_ce0;
 wire   [15:0] sin_table2_q0;
 reg   [15:0] pt_V_read_reg_172;
 reg   [15:0] pt_V_read_reg_172_pp0_iter1_reg;
-wire   [0:0] tmp_33_fu_93_p3;
-reg   [0:0] tmp_33_reg_177;
-reg   [0:0] tmp_33_reg_177_pp0_iter1_reg;
-reg   [0:0] tmp_33_reg_177_pp0_iter2_reg;
+wire   [0:0] tmp_4_fu_93_p3;
+reg   [0:0] tmp_4_reg_177;
+reg   [0:0] tmp_4_reg_177_pp0_iter1_reg;
+reg   [0:0] tmp_4_reg_177_pp0_iter2_reg;
 reg   [15:0] sin_table2_load_reg_187;
 reg   [15:0] tmp_reg_192;
 reg    ap_block_pp0_stage0_subdone;
 wire   [63:0] zext_ln544_fu_129_p1;
-wire   [2:0] tmp_32_fu_63_p4;
+wire   [2:0] tmp_3_fu_63_p4;
 wire   [7:0] phiQ1_V_fu_59_p1;
 wire   [0:0] icmp_ln891_fu_73_p2;
 wire   [7:0] phiQ1_V_1_fu_79_p2;
@@ -160,14 +160,14 @@ always @ (posedge ap_clk) begin
         pt_V_read_reg_172 <= pt_V;
         pt_V_read_reg_172_pp0_iter1_reg <= pt_V_read_reg_172;
         sin_table2_load_reg_187 <= sin_table2_q0;
-        tmp_33_reg_177 <= phi_V[32'd10];
-        tmp_33_reg_177_pp0_iter1_reg <= tmp_33_reg_177;
+        tmp_4_reg_177 <= phi_V[32'd10];
+        tmp_4_reg_177_pp0_iter1_reg <= tmp_4_reg_177;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_ce) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        tmp_33_reg_177_pp0_iter2_reg <= tmp_33_reg_177_pp0_iter1_reg;
+        tmp_4_reg_177_pp0_iter2_reg <= tmp_4_reg_177_pp0_iter1_reg;
         tmp_reg_192 <= {{ret_V_fu_165_p2[31:16]}};
     end
 end
@@ -273,11 +273,11 @@ assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
 assign ap_enable_reg_pp0_iter0 = ap_start;
 
-assign ap_return = ((tmp_33_reg_177_pp0_iter2_reg[0:0] === 1'b1) ? sub_ln68_fu_152_p2 : zext_ln1503_fu_149_p1);
+assign ap_return = ((tmp_4_reg_177_pp0_iter2_reg[0:0] === 1'b1) ? sub_ln68_fu_152_p2 : zext_ln1503_fu_149_p1);
 
 assign icmp_ln891_1_fu_101_p2 = (($signed(phi_V) > $signed(11'd1791)) ? 1'b1 : 1'b0);
 
-assign icmp_ln891_fu_73_p2 = (($signed(tmp_32_fu_63_p4) > $signed(3'd0)) ? 1'b1 : 1'b0);
+assign icmp_ln891_fu_73_p2 = (($signed(tmp_3_fu_63_p4) > $signed(3'd0)) ? 1'b1 : 1'b0);
 
 assign phiQ1_V_1_fu_79_p2 = (phiQ1_V_fu_59_p1 ^ 8'd255);
 
@@ -297,15 +297,15 @@ assign ret_V_fu_165_p10 = sin_table2_load_reg_187;
 
 assign select_ln118_fu_113_p3 = ((icmp_ln891_1_fu_101_p2[0:0] === 1'b1) ? phiQ1_V_3_fu_107_p2 : phiQ1_V_2_fu_85_p3);
 
-assign select_ln887_fu_121_p3 = ((tmp_33_fu_93_p3[0:0] === 1'b1) ? select_ln118_fu_113_p3 : phiQ1_V_2_fu_85_p3);
+assign select_ln887_fu_121_p3 = ((tmp_4_fu_93_p3[0:0] === 1'b1) ? select_ln118_fu_113_p3 : phiQ1_V_2_fu_85_p3);
 
 assign sin_table2_address0 = zext_ln544_fu_129_p1;
 
 assign sub_ln68_fu_152_p2 = (17'd0 - zext_ln1503_fu_149_p1);
 
-assign tmp_32_fu_63_p4 = {{phi_V[10:8]}};
+assign tmp_3_fu_63_p4 = {{phi_V[10:8]}};
 
-assign tmp_33_fu_93_p3 = phi_V[32'd10];
+assign tmp_4_fu_93_p3 = phi_V[32'd10];
 
 assign zext_ln1503_fu_149_p1 = tmp_reg_192;
 

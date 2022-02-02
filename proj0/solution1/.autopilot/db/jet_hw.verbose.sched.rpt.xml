@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'jet_hw'" level="0">
-<item name = "Date">Sun Dec  5 18:58:35 2021
+<item name = "Date">Wed Feb  2 16:58:23 2022
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">proj0</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.17, 3.611, 0.52</column>
+<column name="ap_clk">4.17, 3.644, 0.52</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">38, 38, 6, 6, function</column>
+<column name="">13, 13, 6, 6, function</column>
 </table>
 </item>
 <item name = "Detail">

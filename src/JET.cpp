@@ -40,7 +40,8 @@ void jet_hw(pt_t jet_pt[NJET], glbphi_t jet_phi[NJET], pt2_t& met_pt2, glbphi_t&
 
     met_pt2 = sum_x*sum_x + sum_y*sum_y;
 
-    PhiFromXY(sum_x,sum_y,met_pt2,met_phi);
+    //PhiFromXY(sum_x,sum_y,met_pt2,met_phi);
+    PhiFromXY(sum_x,sum_y,met_phi);
 
     return;
 }

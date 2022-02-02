@@ -67,13 +67,13 @@ reg   [15:0] cos_table1_load_reg_205;
 reg   [15:0] tmp_reg_210;
 reg    ap_block_pp0_stage0_subdone;
 wire   [63:0] zext_ln544_fu_131_p1;
-wire   [2:0] tmp_34_fu_65_p4;
+wire   [2:0] tmp_5_fu_65_p4;
 wire   [7:0] phiQ1_V_fu_61_p1;
 wire   [7:0] phiQ1_V_4_fu_81_p2;
 wire   [7:0] phiQ1_V_5_fu_87_p3;
 wire   [0:0] icmp_ln891_2_fu_103_p2;
 wire   [7:0] phiQ1_V_6_fu_109_p2;
-wire   [0:0] tmp_35_fu_95_p3;
+wire   [0:0] tmp_6_fu_95_p3;
 wire   [7:0] select_ln74_fu_115_p3;
 wire   [7:0] select_ln887_fu_123_p3;
 wire   [31:0] ret_V_fu_178_p2;
@@ -289,7 +289,7 @@ assign icmp_ln887_fu_136_p2 = (($signed(phi_V) < $signed(11'd1792)) ? 1'b1 : 1'b
 
 assign icmp_ln891_2_fu_103_p2 = (($signed(phi_V) > $signed(11'd1791)) ? 1'b1 : 1'b0);
 
-assign icmp_ln891_fu_75_p2 = (($signed(tmp_34_fu_65_p4) > $signed(3'd0)) ? 1'b1 : 1'b0);
+assign icmp_ln891_fu_75_p2 = (($signed(tmp_5_fu_65_p4) > $signed(3'd0)) ? 1'b1 : 1'b0);
 
 assign or_ln80_fu_160_p2 = (icmp_ln891_reg_190_pp0_iter2_reg | icmp_ln887_reg_200_pp0_iter2_reg);
 
@@ -311,13 +311,13 @@ assign ret_V_fu_178_p10 = cos_table1_load_reg_205;
 
 assign select_ln74_fu_115_p3 = ((icmp_ln891_2_fu_103_p2[0:0] === 1'b1) ? phiQ1_V_6_fu_109_p2 : phiQ1_V_5_fu_87_p3);
 
-assign select_ln887_fu_123_p3 = ((tmp_35_fu_95_p3[0:0] === 1'b1) ? select_ln74_fu_115_p3 : phiQ1_V_5_fu_87_p3);
+assign select_ln887_fu_123_p3 = ((tmp_6_fu_95_p3[0:0] === 1'b1) ? select_ln74_fu_115_p3 : phiQ1_V_5_fu_87_p3);
 
 assign sub_ln68_fu_164_p2 = (17'd0 - zext_ln1503_fu_157_p1);
 
-assign tmp_34_fu_65_p4 = {{phi_V[10:8]}};
+assign tmp_5_fu_65_p4 = {{phi_V[10:8]}};
 
-assign tmp_35_fu_95_p3 = phi_V[32'd10];
+assign tmp_6_fu_95_p3 = phi_V[32'd10];
 
 assign zext_ln1503_fu_157_p1 = tmp_reg_210;
 

@@ -221,7 +221,7 @@
 					<Obj>
 						<type>0</type>
 						<id>7</id>
-						<name>tmp_32</name>
+						<name>tmp_3</name>
 						<fileName>src/JET.h</fileName>
 						<fileDirectory>/home/syan/work/hlsmht</fileDirectory>
 						<lineNumber>117</lineNumber>
@@ -420,7 +420,7 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>tmp_33</name>
+						<name>tmp_4</name>
 						<fileName>src/JET.h</fileName>
 						<fileDirectory>/home/syan/work/hlsmht</fileDirectory>
 						<lineNumber>118</lineNumber>

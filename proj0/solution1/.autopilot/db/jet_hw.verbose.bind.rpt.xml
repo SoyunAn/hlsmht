@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'jet_hw'" level="0">
-<item name = "Date">Sun Dec  5 18:58:35 2021
+<item name = "Date">Wed Feb  2 16:58:23 2022
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">proj0</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.17, 3.611, 0.52</column>
+<column name="ap_clk">4.17, 3.644, 0.52</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">38, 38, 6, 6, function</column>
+<column name="">13, 13, 6, 6, function</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_sqrt_fixed_33_33_s_fu_272">sqrt_fixed_33_33_s, 4, 4, 1, 1, function</column>
-<column name="grp_ProjX_fu_277">ProjX, 3, 3, 1, 1, function</column>
-<column name="grp_ProjX_fu_287">ProjX, 3, 3, 1, 1, function</column>
-<column name="grp_ProjY_fu_313">ProjY, 3, 3, 1, 1, function</column>
-<column name="grp_ProjY_fu_323">ProjY, 3, 3, 1, 1, function</column>
+<column name="grp_ProjX_fu_276">ProjX, 3, 3, 1, 1, function</column>
+<column name="grp_ProjX_fu_286">ProjX, 3, 3, 1, 1, function</column>
+<column name="grp_ProjY_fu_312">ProjY, 3, 3, 1, 1, function</column>
+<column name="grp_ProjY_fu_322">ProjY, 3, 3, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

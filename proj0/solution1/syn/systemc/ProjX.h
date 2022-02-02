@@ -70,13 +70,13 @@ struct ProjX : public sc_module {
     sc_signal< sc_lv<16> > tmp_reg_210;
     sc_signal< bool > ap_block_pp0_stage0_subdone;
     sc_signal< sc_lv<64> > zext_ln544_fu_131_p1;
-    sc_signal< sc_lv<3> > tmp_34_fu_65_p4;
+    sc_signal< sc_lv<3> > tmp_5_fu_65_p4;
     sc_signal< sc_lv<8> > phiQ1_V_fu_61_p1;
     sc_signal< sc_lv<8> > phiQ1_V_4_fu_81_p2;
     sc_signal< sc_lv<8> > phiQ1_V_5_fu_87_p3;
     sc_signal< sc_lv<1> > icmp_ln891_2_fu_103_p2;
     sc_signal< sc_lv<8> > phiQ1_V_6_fu_109_p2;
-    sc_signal< sc_lv<1> > tmp_35_fu_95_p3;
+    sc_signal< sc_lv<1> > tmp_6_fu_95_p3;
     sc_signal< sc_lv<8> > select_ln74_fu_115_p3;
     sc_signal< sc_lv<8> > select_ln887_fu_123_p3;
     sc_signal< sc_lv<32> > ret_V_fu_178_p2;
@@ -144,8 +144,8 @@ struct ProjX : public sc_module {
     void thread_select_ln74_fu_115_p3();
     void thread_select_ln887_fu_123_p3();
     void thread_sub_ln68_fu_164_p2();
-    void thread_tmp_34_fu_65_p4();
-    void thread_tmp_35_fu_95_p3();
+    void thread_tmp_5_fu_65_p4();
+    void thread_tmp_6_fu_95_p3();
     void thread_zext_ln1503_fu_157_p1();
     void thread_zext_ln544_fu_131_p1();
     void thread_ap_NS_fsm();

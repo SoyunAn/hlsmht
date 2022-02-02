@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'ProjX'
 ================================================================
-* Date:           Sun Dec  5 18:58:35 2021
+* Date:           Wed Feb  2 16:58:24 2022
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        proj0
@@ -202,15 +202,15 @@ State 1 <SV = 0> <Delay = 2.26>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%phi_V_read = call i11 @_ssdm_op_Read.ap_auto.i11(i11 %phi_V)" [src/JET.h:72]   --->   Operation 5 'read' 'phi_V_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%pt_V_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %pt_V)" [src/JET.h:72]   --->   Operation 6 'read' 'pt_V_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%phiQ1_V = trunc i11 %phi_V_read to i8" [src/JET.h:72]   --->   Operation 7 'trunc' 'phiQ1_V' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp_34 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)" [src/JET.h:73]   --->   Operation 8 'partselect' 'tmp_34' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.49ns)   --->   "%icmp_ln891 = icmp sgt i3 %tmp_34, 0" [src/JET.h:73]   --->   Operation 9 'icmp' 'icmp_ln891' <Predicate = true> <Delay = 0.49> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp_5 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)" [src/JET.h:73]   --->   Operation 8 'partselect' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.49ns)   --->   "%icmp_ln891 = icmp sgt i3 %tmp_5, 0" [src/JET.h:73]   --->   Operation 9 'icmp' 'icmp_ln891' <Predicate = true> <Delay = 0.49> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node phiQ1_V_5)   --->   "%phiQ1_V_4 = xor i8 %phiQ1_V, -1" [src/JET.h:73]   --->   Operation 10 'xor' 'phiQ1_V_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 11 [1/1] (0.30ns) (out node of the LUT)   --->   "%phiQ1_V_5 = select i1 %icmp_ln891, i8 %phiQ1_V_4, i8 %phiQ1_V" [src/JET.h:73]   --->   Operation 11 'select' 'phiQ1_V_5' <Predicate = true> <Delay = 0.30> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node select_ln887)   --->   "%tmp_35 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)" [src/JET.h:74]   --->   Operation 12 'bitselect' 'tmp_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node select_ln887)   --->   "%tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)" [src/JET.h:74]   --->   Operation 12 'bitselect' 'tmp_6' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.61ns)   --->   "%icmp_ln891_2 = icmp sgt i11 %phi_V_read, -257" [src/JET.h:74]   --->   Operation 13 'icmp' 'icmp_ln891_2' <Predicate = true> <Delay = 0.61> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 14 [1/1] (0.00ns) (grouped into LUT with out node select_ln887)   --->   "%phiQ1_V_6 = xor i8 %phiQ1_V_5, -1" [src/JET.h:74]   --->   Operation 14 'xor' 'phiQ1_V_6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 15 [1/1] (0.00ns) (grouped into LUT with out node select_ln887)   --->   "%select_ln74 = select i1 %icmp_ln891_2, i8 %phiQ1_V_6, i8 %phiQ1_V_5" [src/JET.h:74]   --->   Operation 15 'select' 'select_ln74' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 16 [1/1] (0.30ns) (out node of the LUT)   --->   "%select_ln887 = select i1 %tmp_35, i8 %select_ln74, i8 %phiQ1_V_5" [src/JET.h:74]   --->   Operation 16 'select' 'select_ln887' <Predicate = true> <Delay = 0.30> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.30ns) (out node of the LUT)   --->   "%select_ln887 = select i1 %tmp_6, i8 %select_ln74, i8 %phiQ1_V_5" [src/JET.h:74]   --->   Operation 16 'select' 'select_ln887' <Predicate = true> <Delay = 0.30> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%zext_ln544 = zext i8 %select_ln887 to i64" [src/JET.h:77]   --->   Operation 17 'zext' 'zext_ln544' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%cos_table1_addr = getelementptr [256 x i16]* @cos_table1, i64 0, i64 %zext_ln544" [src/JET.h:77]   --->   Operation 18 'getelementptr' 'cos_table1_addr' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 19 [2/2] (1.15ns)   --->   "%cos_table1_load = load i16* %cos_table1_addr, align 2" [src/JET.h:77]   --->   Operation 19 'load' 'cos_table1_load' <Predicate = true> <Delay = 1.15> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 16> <Depth = 256> <ROM>
@@ -256,11 +256,11 @@ Port [ cos_table1]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1;
 phi_V_read      (read         ) [ 00000]
 pt_V_read       (read         ) [ 01110]
 phiQ1_V         (trunc        ) [ 00000]
-tmp_34          (partselect   ) [ 00000]
+tmp_5           (partselect   ) [ 00000]
 icmp_ln891      (icmp         ) [ 01111]
 phiQ1_V_4       (xor          ) [ 00000]
 phiQ1_V_5       (select       ) [ 00000]
-tmp_35          (bitselect    ) [ 00000]
+tmp_6           (bitselect    ) [ 00000]
 icmp_ln891_2    (icmp         ) [ 00000]
 phiQ1_V_6       (xor          ) [ 00000]
 select_ln74     (select       ) [ 00000]
@@ -507,7 +507,7 @@ ret_ln83        (ret          ) [ 00000]
 </bind>
 </comp>
 
-<comp id="65" class="1004" name="tmp_34_fu_65">
+<comp id="65" class="1004" name="tmp_5_fu_65">
 <pin_list>
 <pin id="66" dir="0" index="0" bw="3" slack="0"/>
 <pin id="67" dir="0" index="1" bw="11" slack="0"/>
@@ -517,7 +517,7 @@ ret_ln83        (ret          ) [ 00000]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_34/1 "/>
+<opset="tmp_5/1 "/>
 </bind>
 </comp>
 
@@ -558,7 +558,7 @@ ret_ln83        (ret          ) [ 00000]
 </bind>
 </comp>
 
-<comp id="95" class="1004" name="tmp_35_fu_95">
+<comp id="95" class="1004" name="tmp_6_fu_95">
 <pin_list>
 <pin id="96" dir="0" index="0" bw="1" slack="0"/>
 <pin id="97" dir="0" index="1" bw="11" slack="0"/>
@@ -567,7 +567,7 @@ ret_ln83        (ret          ) [ 00000]
 </pin_list>
 <bind>
 <opcode="bitselect(1000) " fcode="bitselect"/>
-<opset="tmp_35/1 "/>
+<opset="tmp_6/1 "/>
 </bind>
 </comp>
 
@@ -987,10 +987,10 @@ ret_ln83        (ret          ) [ 00000]
 |----------|-----------------------|---------|---------|---------|
 |   trunc  |     phiQ1_V_fu_61     |    0    |    0    |    0    |
 |----------|-----------------------|---------|---------|---------|
-|partselect|      tmp_34_fu_65     |    0    |    0    |    0    |
+|partselect|      tmp_5_fu_65      |    0    |    0    |    0    |
 |          |       tmp_fu_148      |    0    |    0    |    0    |
 |----------|-----------------------|---------|---------|---------|
-| bitselect|      tmp_35_fu_95     |    0    |    0    |    0    |
+| bitselect|      tmp_6_fu_95      |    0    |    0    |    0    |
 |----------|-----------------------|---------|---------|---------|
 |          |   zext_ln544_fu_131   |    0    |    0    |    0    |
 |   zext   |      lhs_V_fu_142     |    0    |    0    |    0    |

@@ -74,13 +74,13 @@ architecture behav of ProjX is
     signal tmp_reg_210 : STD_LOGIC_VECTOR (15 downto 0);
     signal ap_block_pp0_stage0_subdone : BOOLEAN;
     signal zext_ln544_fu_131_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_34_fu_65_p4 : STD_LOGIC_VECTOR (2 downto 0);
+    signal tmp_5_fu_65_p4 : STD_LOGIC_VECTOR (2 downto 0);
     signal phiQ1_V_fu_61_p1 : STD_LOGIC_VECTOR (7 downto 0);
     signal phiQ1_V_4_fu_81_p2 : STD_LOGIC_VECTOR (7 downto 0);
     signal phiQ1_V_5_fu_87_p3 : STD_LOGIC_VECTOR (7 downto 0);
     signal icmp_ln891_2_fu_103_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal phiQ1_V_6_fu_109_p2 : STD_LOGIC_VECTOR (7 downto 0);
-    signal tmp_35_fu_95_p3 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_6_fu_95_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal select_ln74_fu_115_p3 : STD_LOGIC_VECTOR (7 downto 0);
     signal select_ln887_fu_123_p3 : STD_LOGIC_VECTOR (7 downto 0);
     signal ret_V_fu_178_p2 : STD_LOGIC_VECTOR (31 downto 0);
@@ -353,7 +353,7 @@ begin
 
     icmp_ln887_fu_136_p2 <= "1" when (signed(phi_V) < signed(ap_const_lv11_700)) else "0";
     icmp_ln891_2_fu_103_p2 <= "1" when (signed(phi_V) > signed(ap_const_lv11_6FF)) else "0";
-    icmp_ln891_fu_75_p2 <= "1" when (signed(tmp_34_fu_65_p4) > signed(ap_const_lv3_0)) else "0";
+    icmp_ln891_fu_75_p2 <= "1" when (signed(tmp_5_fu_65_p4) > signed(ap_const_lv3_0)) else "0";
     or_ln80_fu_160_p2 <= (icmp_ln891_reg_190_pp0_iter2_reg or icmp_ln887_reg_200_pp0_iter2_reg);
     phiQ1_V_4_fu_81_p2 <= (phiQ1_V_fu_61_p1 xor ap_const_lv8_FF);
     phiQ1_V_5_fu_87_p3 <= 
@@ -369,11 +369,11 @@ begin
         phiQ1_V_6_fu_109_p2 when (icmp_ln891_2_fu_103_p2(0) = '1') else 
         phiQ1_V_5_fu_87_p3;
     select_ln887_fu_123_p3 <= 
-        select_ln74_fu_115_p3 when (tmp_35_fu_95_p3(0) = '1') else 
+        select_ln74_fu_115_p3 when (tmp_6_fu_95_p3(0) = '1') else 
         phiQ1_V_5_fu_87_p3;
     sub_ln68_fu_164_p2 <= std_logic_vector(unsigned(ap_const_lv17_0) - unsigned(zext_ln1503_fu_157_p1));
-    tmp_34_fu_65_p4 <= phi_V(10 downto 8);
-    tmp_35_fu_95_p3 <= phi_V(10 downto 10);
+    tmp_5_fu_65_p4 <= phi_V(10 downto 8);
+    tmp_6_fu_95_p3 <= phi_V(10 downto 10);
     zext_ln1503_fu_157_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_reg_210),17));
     zext_ln544_fu_131_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(select_ln887_fu_123_p3),64));
 end behav;

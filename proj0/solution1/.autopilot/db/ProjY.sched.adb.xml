@@ -82,10 +82,10 @@ _ifconv:2  %phiQ1_V = trunc i11 %phi_V_read to i8
 
 <Node id="7" bw="3" op_0_bw="3" op_1_bw="11" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-_ifconv:3  %tmp_32 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)
+_ifconv:3  %tmp_3 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_32"/></StgValue>
+<StgValue><ssdm name="tmp_3"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -97,7 +97,7 @@ _ifconv:3  %tmp_32 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read
 
 <Node id="8" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-_ifconv:4  %icmp_ln891 = icmp sgt i3 %tmp_32, 0
+_ifconv:4  %icmp_ln891 = icmp sgt i3 %tmp_3, 0
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln891"/></StgValue>
@@ -142,10 +142,10 @@ _ifconv:6  %phiQ1_V_2 = select i1 %icmp_ln891, i8 %phiQ1_V_1, i8 %phiQ1_V
 
 <Node id="11" bw="1" op_0_bw="1" op_1_bw="11" op_2_bw="32">
 <![CDATA[
-_ifconv:7  %tmp_33 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)
+_ifconv:7  %tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_33"/></StgValue>
+<StgValue><ssdm name="tmp_4"/></StgValue>
 </operation>
 
 <operation id="13" st_id="1" stage="1" lat="1">
@@ -202,7 +202,7 @@ _ifconv:10  %select_ln118 = select i1 %icmp_ln891_1, i8 %phiQ1_V_3, i8 %phiQ1_V_
 
 <Node id="15" bw="8" op_0_bw="1" op_1_bw="8" op_2_bw="8">
 <![CDATA[
-_ifconv:11  %select_ln887 = select i1 %tmp_33, i8 %select_ln118, i8 %phiQ1_V_2
+_ifconv:11  %select_ln887 = select i1 %tmp_4, i8 %select_ln118, i8 %phiQ1_V_2
 
 ]]></Node>
 <StgValue><ssdm name="select_ln887"/></StgValue>
@@ -356,7 +356,7 @@ _ifconv:19  %zext_ln1503 = zext i16 %tmp to i17
 <core>AddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="tmp_33" val="1"/>
+<or_exp><and_exp><literal name="tmp_4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -377,7 +377,7 @@ _ifconv:20  %sub_ln68 = sub i17 0, %zext_ln1503
 
 <Node id="25" bw="17" op_0_bw="1" op_1_bw="17" op_2_bw="17">
 <![CDATA[
-_ifconv:21  %select_ln123 = select i1 %tmp_33, i17 %sub_ln68, i17 %zext_ln1503
+_ifconv:21  %select_ln123 = select i1 %tmp_4, i17 %sub_ln68, i17 %zext_ln1503
 
 ]]></Node>
 <StgValue><ssdm name="select_ln123"/></StgValue>

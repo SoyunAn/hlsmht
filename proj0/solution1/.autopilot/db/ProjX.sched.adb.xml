@@ -82,10 +82,10 @@ _ifconv:2  %phiQ1_V = trunc i11 %phi_V_read to i8
 
 <Node id="7" bw="3" op_0_bw="3" op_1_bw="11" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-_ifconv:3  %tmp_34 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)
+_ifconv:3  %tmp_5 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read, i32 8, i32 10)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_34"/></StgValue>
+<StgValue><ssdm name="tmp_5"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -97,7 +97,7 @@ _ifconv:3  %tmp_34 = call i3 @_ssdm_op_PartSelect.i3.i11.i32.i32(i11 %phi_V_read
 
 <Node id="8" bw="1" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-_ifconv:4  %icmp_ln891 = icmp sgt i3 %tmp_34, 0
+_ifconv:4  %icmp_ln891 = icmp sgt i3 %tmp_5, 0
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln891"/></StgValue>
@@ -142,10 +142,10 @@ _ifconv:6  %phiQ1_V_5 = select i1 %icmp_ln891, i8 %phiQ1_V_4, i8 %phiQ1_V
 
 <Node id="11" bw="1" op_0_bw="1" op_1_bw="11" op_2_bw="32">
 <![CDATA[
-_ifconv:7  %tmp_35 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)
+_ifconv:7  %tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i11.i32(i11 %phi_V_read, i32 10)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_35"/></StgValue>
+<StgValue><ssdm name="tmp_6"/></StgValue>
 </operation>
 
 <operation id="13" st_id="1" stage="1" lat="1">
@@ -202,7 +202,7 @@ _ifconv:10  %select_ln74 = select i1 %icmp_ln891_2, i8 %phiQ1_V_6, i8 %phiQ1_V_5
 
 <Node id="15" bw="8" op_0_bw="1" op_1_bw="8" op_2_bw="8">
 <![CDATA[
-_ifconv:11  %select_ln887 = select i1 %tmp_35, i8 %select_ln74, i8 %phiQ1_V_5
+_ifconv:11  %select_ln887 = select i1 %tmp_6, i8 %select_ln74, i8 %phiQ1_V_5
 
 ]]></Node>
 <StgValue><ssdm name="select_ln887"/></StgValue>

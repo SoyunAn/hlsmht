@@ -61,15 +61,15 @@ architecture behav of ProjY is
     signal sin_table2_q0 : STD_LOGIC_VECTOR (15 downto 0);
     signal pt_V_read_reg_172 : STD_LOGIC_VECTOR (15 downto 0);
     signal pt_V_read_reg_172_pp0_iter1_reg : STD_LOGIC_VECTOR (15 downto 0);
-    signal tmp_33_fu_93_p3 : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_33_reg_177 : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_33_reg_177_pp0_iter1_reg : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_33_reg_177_pp0_iter2_reg : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_4_fu_93_p3 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_4_reg_177 : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_4_reg_177_pp0_iter1_reg : STD_LOGIC_VECTOR (0 downto 0);
+    signal tmp_4_reg_177_pp0_iter2_reg : STD_LOGIC_VECTOR (0 downto 0);
     signal sin_table2_load_reg_187 : STD_LOGIC_VECTOR (15 downto 0);
     signal tmp_reg_192 : STD_LOGIC_VECTOR (15 downto 0);
     signal ap_block_pp0_stage0_subdone : BOOLEAN;
     signal zext_ln544_fu_129_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_32_fu_63_p4 : STD_LOGIC_VECTOR (2 downto 0);
+    signal tmp_3_fu_63_p4 : STD_LOGIC_VECTOR (2 downto 0);
     signal phiQ1_V_fu_59_p1 : STD_LOGIC_VECTOR (7 downto 0);
     signal icmp_ln891_fu_73_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal phiQ1_V_1_fu_79_p2 : STD_LOGIC_VECTOR (7 downto 0);
@@ -209,8 +209,8 @@ begin
                 pt_V_read_reg_172 <= pt_V;
                 pt_V_read_reg_172_pp0_iter1_reg <= pt_V_read_reg_172;
                 sin_table2_load_reg_187 <= sin_table2_q0;
-                tmp_33_reg_177 <= phi_V(10 downto 10);
-                tmp_33_reg_177_pp0_iter1_reg <= tmp_33_reg_177;
+                tmp_4_reg_177 <= phi_V(10 downto 10);
+                tmp_4_reg_177_pp0_iter1_reg <= tmp_4_reg_177;
             end if;
         end if;
     end process;
@@ -218,7 +218,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_logic_1 = ap_ce) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then
-                tmp_33_reg_177_pp0_iter2_reg <= tmp_33_reg_177_pp0_iter1_reg;
+                tmp_4_reg_177_pp0_iter2_reg <= tmp_4_reg_177_pp0_iter1_reg;
                 tmp_reg_192 <= ret_V_fu_165_p2(31 downto 16);
             end if;
         end if;
@@ -329,10 +329,10 @@ begin
     end process;
 
     ap_return <= 
-        sub_ln68_fu_152_p2 when (tmp_33_reg_177_pp0_iter2_reg(0) = '1') else 
+        sub_ln68_fu_152_p2 when (tmp_4_reg_177_pp0_iter2_reg(0) = '1') else 
         zext_ln1503_fu_149_p1;
     icmp_ln891_1_fu_101_p2 <= "1" when (signed(phi_V) > signed(ap_const_lv11_6FF)) else "0";
-    icmp_ln891_fu_73_p2 <= "1" when (signed(tmp_32_fu_63_p4) > signed(ap_const_lv3_0)) else "0";
+    icmp_ln891_fu_73_p2 <= "1" when (signed(tmp_3_fu_63_p4) > signed(ap_const_lv3_0)) else "0";
     phiQ1_V_1_fu_79_p2 <= (phiQ1_V_fu_59_p1 xor ap_const_lv8_FF);
     phiQ1_V_2_fu_85_p3 <= 
         phiQ1_V_1_fu_79_p2 when (icmp_ln891_fu_73_p2(0) = '1') else 
@@ -347,7 +347,7 @@ begin
         phiQ1_V_3_fu_107_p2 when (icmp_ln891_1_fu_101_p2(0) = '1') else 
         phiQ1_V_2_fu_85_p3;
     select_ln887_fu_121_p3 <= 
-        select_ln118_fu_113_p3 when (tmp_33_fu_93_p3(0) = '1') else 
+        select_ln118_fu_113_p3 when (tmp_4_fu_93_p3(0) = '1') else 
         phiQ1_V_2_fu_85_p3;
     sin_table2_address0 <= zext_ln544_fu_129_p1(8 - 1 downto 0);
 
@@ -361,8 +361,8 @@ begin
     end process;
 
     sub_ln68_fu_152_p2 <= std_logic_vector(unsigned(ap_const_lv17_0) - unsigned(zext_ln1503_fu_149_p1));
-    tmp_32_fu_63_p4 <= phi_V(10 downto 8);
-    tmp_33_fu_93_p3 <= phi_V(10 downto 10);
+    tmp_3_fu_63_p4 <= phi_V(10 downto 8);
+    tmp_4_fu_93_p3 <= phi_V(10 downto 10);
     zext_ln1503_fu_149_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_reg_192),17));
     zext_ln544_fu_129_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(select_ln887_fu_121_p3),64));
 end behav;

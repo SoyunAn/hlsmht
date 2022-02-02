@@ -98356,10 +98356,10 @@ template<class pt_T, class glbphi_T,class pxy_T>
 }
 # 140 "/home/syan/work/hlsmht/src/JET.h"
 template<class pt_T>
-void init_inv_table(pt_T table_out[(1<<(16 -2))]) {
+void init_inv_table(pt_T table_out[(1<<(16 -4))]) {
 
     table_out[0]=(1<<16)-1;
-    for (int i = 1; i < (1<<(16 -2)); i++) {
+    for (int i = 1; i < (1<<(16 -4)); i++) {
         table_out[i] = round((1<<16) / float(i));
     }
     return;
@@ -98380,9 +98380,9 @@ void init_atan_table(glbphi_T table_out[(1<<(10 -3))]) {
     }
     return;
 }
-
-template<class pxy_T, class glbphi_T, class pt_T>
-    void PhiFromXY(pxy_T px, pxy_T py, pt_T pt, glbphi_T &phi){
+# 218 "/home/syan/work/hlsmht/src/JET.h"
+template<class pxy_T, class glbphi_T>
+    void PhiFromXY(pxy_T px, pxy_T py, glbphi_T &phi){
 
 
 
@@ -98391,7 +98391,7 @@ template<class pxy_T, class glbphi_T, class pt_T>
 
 
     static bool initialized = false;
-    static pt_t inv_table[(1<<(16 -2))];
+    static pt_t inv_table[(1<<(16 -4))];
     static pt_t atan_table[(1<<(10 -3))];
 
     if (!initialized) {
@@ -98401,13 +98401,34 @@ template<class pxy_T, class glbphi_T, class pt_T>
     }
 
     if(px==0 && py==0){ phi = 0; return; }
-  int index;
-  index = (((px/hls::sqrt(pt))+1)/2)*(1<<(10 -3));
-  if(index<0) index = 0;
-  if(index>(1<<(10 -3))-1) index = (1<<(10 -3))-1;
-  phi = atan_table[index];
-  if(py < 0) phi = -phi;
-# 219 "/home/syan/work/hlsmht/src/JET.h"
+
+
+    pt_t x = px;
+    pt_t y = py;
+    if(px<0) x = -px;
+    if(py<0) y = -py;
+
+    pt_t a = x;
+    pt_t b = y;
+    if(a>b){ a = y; b = x; }
+
+    pt_t inv_b;
+    if(b>= (1<<(16 -4))) inv_b = 1;
+
+
+    else inv_b = inv_table[b];
+
+    pt_t a_over_b = a * inv_b;
+    ap_uint<(10 -3)> atan_index = a_over_b >> (16 -(10 -3));
+    phi = atan_table[atan_index];
+
+
+    if(y>x) phi = (1<<(10 -2)) - phi;
+
+    if( px < 0 && py > 0 ) phi = (1<<(10 -1)) - phi;
+    if( px > 0 && py < 0 ) phi = -phi;
+    if( px < 0 && py < 0 ) phi = -((1<<(10 -1)) - phi);
+
     return;
 }
 # 12 "/home/syan/work/hlsmht/jet_test.cpp" 2
@@ -98577,7 +98598,7 @@ int full_alg_test() {
         }
         pt2_t out_pt2_hw = hw_sum_x*hw_sum_x + hw_sum_y*hw_sum_y;
         pt_t hw_ratio;
-        PhiFromXY<pxy_t, glbphi_t, glbphi_t>(hw_sum_x,hw_sum_y,out_pt2_hw,out_phi_hw);
+        PhiFromXY<pxy_t, glbphi_t>(hw_sum_x,hw_sum_y,out_phi_hw);
 
 
 

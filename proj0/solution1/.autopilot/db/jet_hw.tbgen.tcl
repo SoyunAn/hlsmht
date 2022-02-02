@@ -133,7 +133,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "6",
-		"VariableLatency" : "0", "ExactLatency" : "38", "EstimateLatencyMin" : "38", "EstimateLatencyMax" : "38",
+		"VariableLatency" : "0", "ExactLatency" : "13", "EstimateLatencyMin" : "13", "EstimateLatencyMax" : "13",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -165,30 +165,17 @@ set RtlHierarchyInfo {[
 			{"Name" : "met_phi_V", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "cos_table1", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "6", "SubInstance" : "grp_ProjX_fu_287", "Port" : "cos_table1"},
-					{"ID" : "3", "SubInstance" : "grp_ProjX_fu_277", "Port" : "cos_table1"}]},
+					{"ID" : "6", "SubInstance" : "grp_ProjX_fu_286", "Port" : "cos_table1"},
+					{"ID" : "3", "SubInstance" : "grp_ProjX_fu_276", "Port" : "cos_table1"}]},
 			{"Name" : "sin_table2", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "9", "SubInstance" : "grp_ProjY_fu_313", "Port" : "sin_table2"},
-					{"ID" : "12", "SubInstance" : "grp_ProjY_fu_323", "Port" : "sin_table2"}]},
+					{"ID" : "9", "SubInstance" : "grp_ProjY_fu_312", "Port" : "sin_table2"},
+					{"ID" : "12", "SubInstance" : "grp_ProjY_fu_322", "Port" : "sin_table2"}]},
+			{"Name" : "inv_table3", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "atan_table4", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.atan_table4_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_sqrt_fixed_33_33_s_fu_272", "Parent" : "0",
-		"CDFG" : "sqrt_fixed_33_33_s",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
-		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "4", "EstimateLatencyMin" : "4", "EstimateLatencyMax" : "4",
-		"Combinational" : "0",
-		"Datapath" : "1",
-		"ClockEnable" : "1",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
-		"Port" : [
-			{"Name" : "x_V", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_277", "Parent" : "0", "Child" : ["4", "5"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.inv_table3_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.atan_table4_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_276", "Parent" : "0", "Child" : ["4", "5"],
 		"CDFG" : "ProjX",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -205,9 +192,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "pt_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "phi_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cos_table1", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_277.cos_table1_U", "Parent" : "3"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_277.jet_hw_mul_mul_16ns_16ns_32_1_1_U1", "Parent" : "3"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_287", "Parent" : "0", "Child" : ["7", "8"],
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_276.cos_table1_U", "Parent" : "3"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_276.jet_hw_mul_mul_16ns_16ns_32_1_1_U1", "Parent" : "3"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_286", "Parent" : "0", "Child" : ["7", "8"],
 		"CDFG" : "ProjX",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -224,9 +211,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "pt_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "phi_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cos_table1", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_287.cos_table1_U", "Parent" : "6"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_287.jet_hw_mul_mul_16ns_16ns_32_1_1_U1", "Parent" : "6"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_313", "Parent" : "0", "Child" : ["10", "11"],
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_286.cos_table1_U", "Parent" : "6"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjX_fu_286.jet_hw_mul_mul_16ns_16ns_32_1_1_U1", "Parent" : "6"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_312", "Parent" : "0", "Child" : ["10", "11"],
 		"CDFG" : "ProjY",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -243,9 +230,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "pt_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "phi_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sin_table2", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_313.sin_table2_U", "Parent" : "9"},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_313.jet_hw_mul_mul_16ns_16ns_32_1_1_U6", "Parent" : "9"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_323", "Parent" : "0", "Child" : ["13", "14"],
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_312.sin_table2_U", "Parent" : "9"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_312.jet_hw_mul_mul_16ns_16ns_32_1_1_U6", "Parent" : "9"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_322", "Parent" : "0", "Child" : ["13", "14"],
 		"CDFG" : "ProjY",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -262,11 +249,11 @@ set RtlHierarchyInfo {[
 			{"Name" : "pt_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "phi_V", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sin_table2", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_323.sin_table2_U", "Parent" : "12"},
-	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_323.jet_hw_mul_mul_16ns_16ns_32_1_1_U6", "Parent" : "12"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_udiv_17s_17ns_17_21_1_U11", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_mul_mul_17s_17s_32_1_1_U12", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_mac_muladd_17s_17s_32s_32_1_1_U13", "Parent" : "0"}]}
+	{"ID" : "13", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_322.sin_table2_U", "Parent" : "12"},
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ProjY_fu_322.jet_hw_mul_mul_16ns_16ns_32_1_1_U6", "Parent" : "12"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_mul_mul_17s_17s_32_1_1_U10", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_mac_muladd_17s_17s_32s_32_1_1_U11", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.jet_hw_mul_mul_16s_16s_16_1_1_U12", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -291,13 +278,12 @@ set ArgLastReadFirstWriteLatency {
 		jet_phi_7_V {Type I LastRead 3 FirstWrite -1}
 		jet_phi_8_V {Type I LastRead 4 FirstWrite -1}
 		jet_phi_9_V {Type I LastRead 4 FirstWrite -1}
-		met_pt2_V {Type O LastRead -1 FirstWrite 33}
-		met_phi_V {Type O LastRead -1 FirstWrite 38}
+		met_pt2_V {Type O LastRead -1 FirstWrite 9}
+		met_phi_V {Type O LastRead -1 FirstWrite 13}
 		cos_table1 {Type I LastRead -1 FirstWrite -1}
 		sin_table2 {Type I LastRead -1 FirstWrite -1}
+		inv_table3 {Type I LastRead -1 FirstWrite -1}
 		atan_table4 {Type I LastRead -1 FirstWrite -1}}
-	sqrt_fixed_33_33_s {
-		x_V {Type I LastRead 0 FirstWrite -1}}
 	ProjX {
 		pt_V {Type I LastRead 0 FirstWrite -1}
 		phi_V {Type I LastRead 0 FirstWrite -1}
@@ -318,7 +304,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "38", "Max" : "38"}
+	{"Name" : "Latency", "Min" : "13", "Max" : "13"}
 	, {"Name" : "Interval", "Min" : "6", "Max" : "6"}
 ]}
 

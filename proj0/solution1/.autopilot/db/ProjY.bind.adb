@@ -221,7 +221,7 @@
 					<Obj>
 						<type>0</type>
 						<id>7</id>
-						<name>tmp_32</name>
+						<name>tmp_3</name>
 						<fileName>src/JET.h</fileName>
 						<fileDirectory>/home/syan/work/hlsmht</fileDirectory>
 						<lineNumber>117</lineNumber>
@@ -420,7 +420,7 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>tmp_33</name>
+						<name>tmp_4</name>
 						<fileName>src/JET.h</fileName>
 						<fileDirectory>/home/syan/work/hlsmht</fileDirectory>
 						<lineNumber>118</lineNumber>
@@ -2497,7 +2497,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_32_fu_63</first>
+			<first>tmp_3_fu_63</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2505,7 +2505,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_33_fu_93</first>
+			<first>tmp_4_fu_93</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2653,7 +2653,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_33_reg_177</first>
+			<first>tmp_4_reg_177</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

@@ -162,4 +162,302 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 39.
-INFO: [SCHED 204-11]
+INFO: [SCHED 204-11]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.676 ; gain = 132.129 ; free physical = 132085 ; free virtual = 200175
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.676 ; gain = 132.129 ; free physical = 132085 ; free virtual = 200175
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 1368.676 ; gain = 580.129 ; free physical = 131562 ; free virtual = 199701
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:30) automatically.
+WARNING: [SYNCHK 200-23] /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 1368.676 ; gain = 580.129 ; free physical = 131555 ; free virtual = 199701
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<33, 33>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:13).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'jet_hw' (src/JET.cpp:15).
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<33, 33>' completely with a factor of 17.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<33, 33>' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_COMPONENTS' (src/JET.cpp:27) in function 'jet_hw' completely with a factor of 10.
+INFO: [XFORM 203-101] Partitioning array 'jet_pt.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'jet_phi.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' into 'jet_hw' (src/JET.cpp:43) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<33, 33>'... converting 37 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:116:31) to (src/JET.h:125:5) in function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:72:31) to (src/JET.h:83:5) in function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:19 ; elapsed = 00:01:23 . Memory (MB): peak = 1368.676 ; gain = 580.129 ; free physical = 131540 ; free virtual = 199700
+WARNING: [XFORM 203-631] Renaming function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjY' (src/JET.h:116:5)
+WARNING: [XFORM 203-631] Renaming function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjX' (src/JET.h:72:5)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1368.676 ; gain = 580.129 ; free physical = 131504 ; free virtual = 199667
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'jet_hw' ...
+WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<33, 33>' to 'sqrt_fixed_33_33_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjX'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 83.98 seconds; current allocated memory: 559.606 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 559.756 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjY'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 559.867 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 559.996 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_33_33_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<33, 33>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 560.483 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 561.294 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 39.
+INFO: [SCHED 204-11]==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/JET.cpp:4:
+src/JET.h:171:2: warning: '/*' within block comment [-Wcomment]
+        /* int INDEX = 0;  */
+        ^
+1 warning generated.
+ERROR: [HLS 200-70] Compilation errors found: In file included from src/JET.cpp:1:
+In file included from src/JET.cpp:4:
+In file included from src/JET.h:4:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/iostream:38:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/ostream:37:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/ios:41:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/ios_base.h:40:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/locale_classes.h:39:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/string:47:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:424:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x > (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:443:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x < (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:462:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x >= (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:481:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x <= (__UINTPTR_TYPE__)__y;
+         ^
+4 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/JET.cpp:4:
+src/JET.h:171:2: warning: '/*' within block comment [-Wcomment]
+        /* int INDEX = 0;  */
+        ^
+1 warning generated.
+ERROR: [HLS 200-70] Compilation errors found: In file included from src/JET.cpp:1:
+In file included from src/JET.cpp:4:
+In file included from src/JET.h:4:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/iostream:38:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/ostream:37:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/ios:41:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/ios_base.h:40:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/locale_classes.h:39:
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/string:47:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:424:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x > (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:443:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x < (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:462:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x >= (__UINTPTR_TYPE__)__y;
+         ^
+/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/gcc/9.3.0/lib/gcc/x86_64-unknown-linux-gnu/9.3.0/../../../../include/c++/9.3.0/bits/stl_function.h:481:10: error: use of undeclared identifier '__UINTPTR_TYPE__'
+ return (__UINTPTR_TYPE__)__x <= (__UINTPTR_TYPE__)__y;
+         ^
+4 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flga2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 4.167ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/JET.cpp:4:
+src/JET.h:171:2: warning: '/*' within block comment [-Wcomment]
+        /* int INDEX = 0;  */
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 128641 ; free virtual = 200294
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 128641 ; free virtual = 200294
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128158 ; free virtual = 199849
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:30) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128155 ; free virtual = 199850
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'jet_hw' (src/JET.cpp:15).
+INFO: [HLS 200-489] Unrolling loop 'LOOP_COMPONENTS' (src/JET.cpp:27) in function 'jet_hw' completely with a factor of 10.
+INFO: [XFORM 203-101] Partitioning array 'jet_pt.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'jet_phi.V' (src/JET.cpp:15) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:116:31) to (src/JET.h:125:5) in function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:72:31) to (src/JET.h:83:5) in function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:237:17) to (src/JET.h:267:1) in function 'PhiFromXY<ap_int<17>, ap_int<11> >'... converting 8 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11> >' into 'jet_hw' (src/JET.cpp:44) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128143 ; free virtual = 199850
+WARNING: [XFORM 203-631] Renaming function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjY' (src/JET.h:116:5)
+WARNING: [XFORM 203-631] Renaming function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjX' (src/JET.h:72:5)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128138 ; free virtual = 199846
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'jet_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjX'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 67.7 seconds; current allocated memory: 518.131 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 518.296 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'ProjY'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 518.392 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 518.521 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 14.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 518.956 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 519.587 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProjX' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjX'.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 519.997 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ProjY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjY'.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 520.834 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'jet_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_0_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_1_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_2_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_3_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_4_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_5_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_6_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_7_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/jet_pt_8_V' to 'ap_none'.

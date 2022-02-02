@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'ProjY'" level="0">
-<item name = "Date">Sun Dec  5 18:58:35 2021
+<item name = "Date">Wed Feb  2 16:58:24 2022
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">proj0</item>
@@ -108,9 +108,9 @@
 <column name="pt_V_read_reg_172">16, 0, 16, 0</column>
 <column name="pt_V_read_reg_172_pp0_iter1_reg">16, 0, 16, 0</column>
 <column name="sin_table2_load_reg_187">16, 0, 16, 0</column>
-<column name="tmp_33_reg_177">1, 0, 1, 0</column>
+<column name="tmp_4_reg_177">1, 0, 1, 0</column>
 <column name="tmp_reg_192">16, 0, 16, 0</column>
-<column name="tmp_33_reg_177">64, 32, 1, 0</column>
+<column name="tmp_4_reg_177">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

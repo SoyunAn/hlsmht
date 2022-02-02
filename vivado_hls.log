@@ -6,7 +6,7 @@
 
 source /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'syan' on host 'hep.knu.ac.kr' (Linux_x86_64 version 3.10.0-1160.31.1.el7.x86_64) on Sun Dec 05 18:56:59 KST 2021
+INFO: [HLS 200-10] For user 'syan' on host 'hep.knu.ac.kr' (Linux_x86_64 version 3.10.0-1160.45.1.el7.x86_64) on Wed Feb 02 16:57:15 KST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
 INFO: [HLS 200-10] In directory '/home/syan/work/hlsmht'
 Sourcing Tcl script 'do_jet.tcl'
@@ -28,38 +28,33 @@ INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
 INFO: [HLS 200-10] Analyzing design file 'src/JET.cpp' ... 
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:01:05 ; elapsed = 00:01:09 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 176089 ; free virtual = 201513
+WARNING: [HLS 200-40] In file included from src/JET.cpp:4:
+src/JET.h:171:2: warning: '/*' within block comment [-Wcomment]
+        /* int INDEX = 0;  */
+        ^
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 128641 ; free virtual = 200294
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 920.668 ; gain = 132.129 ; free physical = 128641 ; free virtual = 200294
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174821 ; free virtual = 200288
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128158 ; free virtual = 199849
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
-INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
 INFO: [XFORM 203-602] Inlining function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:29) automatically.
 INFO: [XFORM 203-602] Inlining function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' into 'jet_hw' (src/JET.cpp:30) automatically.
-WARNING: [SYNCHK 200-23] /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:272: variable-indexed range selection may cause suboptimal QoR.
-INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:29 ; elapsed = 00:01:34 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174817 ; free virtual = 200289
-INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'sqrt_fixed<33, 33>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:44:13).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128155 ; free virtual = 199850
 INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'jet_hw' (src/JET.cpp:15).
-INFO: [HLS 200-489] Unrolling loop 'Loop-1' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:267) in function 'sqrt_fixed<33, 33>' completely with a factor of 17.
-INFO: [HLS 200-489] Unrolling loop 'Loop-2' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:295) in function 'sqrt_fixed<33, 33>' completely with a factor of 1.
 INFO: [HLS 200-489] Unrolling loop 'LOOP_COMPONENTS' (src/JET.cpp:27) in function 'jet_hw' completely with a factor of 10.
 INFO: [XFORM 203-101] Partitioning array 'jet_pt.V' (src/JET.cpp:15) in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'jet_phi.V' (src/JET.cpp:15) in dimension 1 completely.
-INFO: [XFORM 203-602] Inlining function 'sqrt_fixed<32>' into 'hls::sqrt<32>' (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_math.h:1280) automatically.
-INFO: [XFORM 203-602] Inlining function 'hls::sqrt<32>' into 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' (src/JET.h:187) automatically.
-INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11>, ap_uint<32> >' into 'jet_hw' (src/JET.cpp:43) automatically.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (/data1/scratch/syan/HLS_2019_2/Vivado/2019.1/common/technology/autopilot/hls_sqrt_apfixed.h:372:1) in function 'sqrt_fixed<33, 33>'... converting 37 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:116:31) to (src/JET.h:125:5) in function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:72:31) to (src/JET.h:83:5) in function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >'... converting 3 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174803 ; free virtual = 200290
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/JET.h:237:17) to (src/JET.h:267:1) in function 'PhiFromXY<ap_int<17>, ap_int<11> >'... converting 8 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'PhiFromXY<ap_int<17>, ap_int<11> >' into 'jet_hw' (src/JET.cpp:44) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128143 ; free virtual = 199850
 WARNING: [XFORM 203-631] Renaming function 'ProjY<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjY' (src/JET.h:116:5)
 WARNING: [XFORM 203-631] Renaming function 'ProjX<ap_uint<16>, ap_int<11>, ap_int<17> >' to 'ProjX' (src/JET.h:72:5)
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:30 ; elapsed = 00:01:35 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174799 ; free virtual = 200290
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:04 ; elapsed = 00:01:08 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128138 ; free virtual = 199846
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'jet_hw' ...
-WARNING: [SYN 201-103] Legalizing function name 'sqrt_fixed<33, 33>' to 'sqrt_fixed_33_33_s'.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'ProjX' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -67,13 +62,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'ProjX'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 95.53 seconds; current allocated memory: 618.103 MB.
+INFO: [HLS 200-111]  Elapsed time: 67.7 seconds; current allocated memory: 518.131 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.268 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 518.296 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'ProjY' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -81,58 +76,39 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'ProjY'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 618.363 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 518.392 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 618.492 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'sqrt_fixed_33_33_s' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining function 'sqrt_fixed<33, 33>'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 618.970 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 619.760 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 518.521 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'jet_hw' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'jet_hw'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 39.
+INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 14.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 620.257 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 518.956 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 620.926 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 519.587 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'ProjX' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjX'.
-INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 621.478 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 519.997 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'ProjY' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16ns_16ns_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'ProjY'.
-INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 622.352 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'sqrt_fixed_33_33_s' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'sqrt_fixed_33_33_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 624.092 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 520.834 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'jet_hw' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -160,15 +136,15 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/met_pt2_V' to 'ap_v
 INFO: [RTGEN 206-500] Setting interface mode on port 'jet_hw/met_phi_V' to 'ap_vld'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'jet_hw' to 'ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Generating core module 'jet_hw_mac_muladd_17s_17s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_16s_16s_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'jet_hw_mul_mul_17s_17s_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'jet_hw_udiv_17s_17ns_17_21_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'jet_hw'.
-INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 627.942 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 522.378 MB.
 INFO: [RTMG 210-279] Implementing memory 'ProjX_cos_table1_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'ProjY_sin_table2_rom' using auto ROMs.
-INFO: [RTMG 210-282] Generating pipelined core: 'jet_hw_udiv_17s_17ns_17_21_1_div'
+INFO: [RTMG 210-279] Implementing memory 'jet_hw_inv_table3_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'jet_hw_atan_table4_rom' using distributed ROMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:33 ; elapsed = 00:01:39 . Memory (MB): peak = 2136.668 ; gain = 1348.129 ; free physical = 174786 ; free virtual = 200289
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:05 ; elapsed = 00:01:10 . Memory (MB): peak = 1368.668 ; gain = 580.129 ; free physical = 128135 ; free virtual = 199847
 INFO: [VHDL 208-304] Generating VHDL RTL for jet_hw.
 INFO: [VLOG 209-307] Generating Verilog RTL for jet_hw.
 INFO: [COSIM 212-47] Using XSIM for RTL simulation.
@@ -200,8 +176,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/
 INFO: [VRFC 10-3107] analyzing entity 'ProjX'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/ProjY.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ProjY'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/sqrt_fixed_33_33_s.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'sqrt_fixed_33_33_s'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_16ns_16ns_32_1_1.vhd" into library xil_defaultlib
@@ -213,16 +187,18 @@ INFO: [VRFC 10-3107] analyzing entity 'ProjX_cos_table1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/ProjY_sin_table2.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'ProjY_sin_table2_rom'
 INFO: [VRFC 10-3107] analyzing entity 'ProjY_sin_table2'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_udiv_17s_17ns_17_21_1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1_div_u'
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1_div'
-INFO: [VRFC 10-3107] analyzing entity 'jet_hw_udiv_17s_17ns_17_21_1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_17s_17s_32_1_1.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_17s_17s_32_1_1_DSP48_1'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_17s_17s_32_1_1'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mac_muladd_17s_17s_32s_32_1_1.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mac_muladd_17s_17s_32s_32_1_1_DSP48_2'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mac_muladd_17s_17s_32s_32_1_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_mul_mul_16s_16s_16_1_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_16s_16s_16_1_1_DSP48_3'
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_mul_mul_16s_16s_16_1_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_inv_table3.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_inv_table3_rom'
+INFO: [VRFC 10-3107] analyzing entity 'jet_hw_inv_table3'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw_atan_table4.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_atan_table4_rom'
 INFO: [VRFC 10-3107] analyzing entity 'jet_hw_atan_table4'
@@ -239,9 +215,10 @@ Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_textio
 Compiling module work.glbl
+Compiling architecture rtl of entity xil_defaultlib.jet_hw_inv_table3_rom [jet_hw_inv_table3_rom_default]
+Compiling architecture arch of entity xil_defaultlib.jet_hw_inv_table3 [jet_hw_inv_table3_default]
 Compiling architecture rtl of entity xil_defaultlib.jet_hw_atan_table4_rom [jet_hw_atan_table4_rom_default]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_atan_table4 [jet_hw_atan_table4_default]
-Compiling architecture behav of entity xil_defaultlib.sqrt_fixed_33_33_s [sqrt_fixed_33_33_s_default]
 Compiling architecture rtl of entity xil_defaultlib.ProjX_cos_table1_rom [projx_cos_table1_rom_default]
 Compiling architecture arch of entity xil_defaultlib.ProjX_cos_table1 [projx_cos_table1_default]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_16ns_16ns_32_1_1_DSP48_0 [jet_hw_mul_mul_16ns_16ns_32_1_1_...]
@@ -250,13 +227,12 @@ Compiling architecture behav of entity xil_defaultlib.ProjX [projx_default]
 Compiling architecture rtl of entity xil_defaultlib.ProjY_sin_table2_rom [projy_sin_table2_rom_default]
 Compiling architecture arch of entity xil_defaultlib.ProjY_sin_table2 [projy_sin_table2_default]
 Compiling architecture behav of entity xil_defaultlib.ProjY [projy_default]
-Compiling architecture rtl of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1_div_u [\jet_hw_udiv_17s_17ns_17_21_1_di...]
-Compiling architecture rtl of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1_div [\jet_hw_udiv_17s_17ns_17_21_1_di...]
-Compiling architecture arch of entity xil_defaultlib.jet_hw_udiv_17s_17ns_17_21_1 [\jet_hw_udiv_17s_17ns_17_21_1(id...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_17s_17s_32_1_1_DSP48_1 [jet_hw_mul_mul_17s_17s_32_1_1_ds...]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_mul_mul_17s_17s_32_1_1 [\jet_hw_mul_mul_17s_17s_32_1_1(i...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw_mac_muladd_17s_17s_32s_32_1_1_DSP48_2 [jet_hw_mac_muladd_17s_17s_32s_32...]
 Compiling architecture arch of entity xil_defaultlib.jet_hw_mac_muladd_17s_17s_32s_32_1_1 [\jet_hw_mac_muladd_17s_17s_32s_3...]
+Compiling architecture behav of entity xil_defaultlib.jet_hw_mul_mul_16s_16s_16_1_1_DSP48_3 [jet_hw_mul_mul_16s_16s_16_1_1_ds...]
+Compiling architecture arch of entity xil_defaultlib.jet_hw_mul_mul_16s_16s_16_1_1 [\jet_hw_mul_mul_16s_16s_16_1_1(i...]
 Compiling architecture behav of entity xil_defaultlib.jet_hw [jet_hw_default]
 Compiling architecture behav of entity xil_defaultlib.apatb_jet_hw_top
 Built simulation snapshot jet_hw
@@ -267,8 +243,8 @@ Built simulation snapshot jet_hw
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Dec  5 18:59:47 2021. For additional details about this file, please refer to the WebTalk help file at /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun Dec  5 18:59:47 2021...
+INFO: [Common 17-186] '/home/syan/work/hlsmht/proj0/solution1/sim/vhdl/xsim.dir/jet_hw/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Feb  2 16:59:19 2022. For additional details about this file, please refer to the WebTalk help file at /data1/scratch/syan/HLS_2019_2/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Feb  2 16:59:19 2022...
 
 ****** xsim v2019.1 (64-bit)
   **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
@@ -384,13 +360,13 @@ WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of o
 ## save_wave_config jet_hw.wcfg
 ## run all
 Note: simulation done!
-Time: 2764320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
+Time: 2660320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
 Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
-Time: 2764320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
-$finish called at time : 2764320 ps
+Time: 2660320 ps  Iteration: 1  Process: /apatb_jet_hw_top/generate_sim_done_proc  File: /home/syan/work/hlsmht/proj0/solution1/sim/vhdl/jet_hw.autotb.vhd
+$finish called at time : 2660320 ps
 ## quit
-INFO: [Common 17-206] Exiting xsim at Sun Dec  5 18:59:58 2021...
+INFO: [Common 17-206] Exiting xsim at Wed Feb  2 16:59:29 2022...
 INFO: [COSIM 212-316] Starting C post checking ...
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
-INFO: [HLS 200-112] Total elapsed time: 180.07 seconds; peak allocated memory: 627.942 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Sun Dec  5 18:59:59 2021...
+INFO: [HLS 200-112] Total elapsed time: 134.41 seconds; peak allocated memory: 522.378 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Feb  2 16:59:30 2022...
